@@ -8,8 +8,8 @@
 1.6 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.6.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.6.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
-1.7 [Final Code]()</br>
-1.8 [Course Code Challenge]()</br>
+1.7 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
+1.8 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
 
 ***
 
@@ -77,7 +77,8 @@ document.getElementById("root").appendChild(h1);
 
 > :warning: **WARNING**</br></br>
 > The **render method** can only take a single **HTML element**. We can then turn two or more **HTML elements** into one by placing them into a **div** and everyting that goes inside a **div** still counts as a **single HTML element**.</br></br>
-> ```js
+
+```js
 ReactDOM.render(
   <div>
     <h1>Hello World!</h1>
@@ -86,7 +87,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
->
 
 ## Final Code
 
@@ -121,7 +121,7 @@ The challenge below has been completed on CodeSandbox:
 - It should display an unordered list (bullet points).
 - It should contain 3 list elements.
 
-Full code:
+**Full code**:
 
 ```js
 //Import the dependencies needed
