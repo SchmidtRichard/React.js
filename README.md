@@ -3,19 +3,19 @@
 1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
 1.2 [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
 1.3 [JSX & Babel](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx--babel)</br>
-1.4 [ROOT DIV]()</br>
-1.5 [Dependencies Used]()</br>
+1.4 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
+1.5 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
 1.6 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.6.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;1.6.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
+1.7 [Final Code]()</br>
+1.8 [Course Code Challenge]()</br>
 
 ***
 
 # React.js
 
-**React** is a JavaScript library for building user interfaces (front-end framework essentially).
-
-
+**React** is a front-end, JavaScript library for building user interfaces or UI components. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.
 
 ## CodeSandbox
 
@@ -24,8 +24,6 @@
 It is a browser based development environment that was initially created with React development in mind. It takes care of a lot of the grunt work and setup and makes it easy to install dependencies with **NPM** support, so every package that we have used previously using **NPM install** we can use inside **CodeSandbox**.
 
 It can be embedded into medium blog posts and web pages, it allows us to build and deploy within the same application and a lot of other things including really good syntax highlighting and linting as well.
-
-
 
 ## JSX & Babel
 
@@ -78,9 +76,70 @@ document.getElementById("root").appendChild(h1);
 ```
 
 > :warning: **WARNING**</br></br>
-> The **render method** can only take a single **HTML element**. We can then turn two or more **HTML elements** into one by placing them into a **div** and everyting that goes inside a **div** still counts as a **single HTML element**.
+> The **render method** can only take a single **HTML element**. We can then turn two or more **HTML elements** into one by placing them into a **div** and everyting that goes inside a **div** still counts as a **single HTML element**.</br></br>
+> ```js
+ReactDOM.render(
+  <div>
+    <h1>Hello World!</h1>
+    <p>This is a paragraph.</p>
+  </div>,
+  document.getElementById("root")
+);
+```
+>
 
+## Final Code
 
+```js
+//Import the dependencies needed
+import React from "react";
+import ReactDOM from "react-dom";
+
+/*
+In order to use React to actually create something on screen
+we are going to use the render method by tapping into ReactDOM
+The render function takes 3 inputs:
+ReactDOM.render(WHAT TO SHOW, WHERE TO SHOW IT, OPTIONAL CALLBACK 
+TO TELL US WHEN THAT RENDER FUNCTION HAS COMPLETED);
+WHERE TO SHOW IT: a particular HTML element that we will target inside index.html
+*/
+ReactDOM.render(
+  <div>
+    <h1>Hello World!</h1>
+    <p>This is a paragraph.</p>
+  </div>,
+  document.getElementById("root")
+);
+```
+
+## Course Code Challenge
+
+The challenge below has been completed on CodeSandbox:
+
+- Create a react app from scratch.
+- It should display a h1 heading.
+- It should display an unordered list (bullet points).
+- It should contain 3 list elements.
+
+Full code:
+
+```js
+//Import the dependencies needed
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(
+  <div>
+    <h1>List of Favourite Things</h1>
+    <ul>
+      <li>Panda</li>
+      <li>Piriquito</li>
+      <li>Andressa</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+```
 
 
 
