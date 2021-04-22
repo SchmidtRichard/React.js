@@ -1,33 +1,37 @@
 # Table of Contents
 
 1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
-1.2 [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
-1.3 [JSX & Babel](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx--babel)</br>
-1.4 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
-1.5 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
-1.6 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;1.6.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;1.6.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
-1.7 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
-1.8 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
+2. [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
+3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx--babel)</br>
+3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
+3.2 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
+3.3 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.3 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.3.4 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
+4. [JavaScript Expressions in JSX & ES6 Template Literals]()</br>
+4.1 [JavaScript Expressions in JSX Code Example]()</br>
 
 ***
 
 # React.js
 
-**React** is a front-end, JavaScript library for building user interfaces or UI components. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.
+[**React**](https://reactjs.org/) is a front-end, JavaScript library for building user interfaces or UI components. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.
 
-## CodeSandbox
+# CodeSandbox
 
-**CodeSandbox** is an online editor for rapid web development. With **CodeSandbox**, you can prototype quickly, experiment easily, and share creations with a click. Use it to create static sites, full-stack web apps, or components on any device with a web browser.
+[**CodeSandbox**](https://codesandbox.io/) is an online editor for rapid web development. With **CodeSandbox**, you can prototype quickly, experiment easily, and share creations with a click. Use it to create static sites, full-stack web apps, or components on any device with a web browser.
 
 It is a browser based development environment that was initially created with React development in mind. It takes care of a lot of the grunt work and setup and makes it easy to install dependencies with **NPM** support, so every package that we have used previously using **NPM install** we can use inside **CodeSandbox**.
 
 It can be embedded into medium blog posts and web pages, it allows us to build and deploy within the same application and a lot of other things including really good syntax highlighting and linting as well.
 
-## JSX & Babel
+***
 
-**JSX** stands for **JavaScript XML**. **JSX** makes it easier to write and add HTML in React. **React** works by creating these **JSX** files, files where we've got **HTML** right in the body of a **JavaScript** file, and what happens behing the scenes is that the **HTML** is picked up by a **compiler** and it gets converted or compiled down to actual **JavaScript** and the compiler comes from the **React module** `var React = require("react");`. Inside the **React module** there is something called **Babel**. **Babel** is a **JavaScript** compiler and that is able to take next generation **JavaScript** and compile it down to a version of **JavaScript** that every browser can understand, and this includes compiling **JSX** down to **plain old JavaScript**.
+# Introduction to JSX and Babel Lesson
+
+[**JSX**](https://reactjs.org/docs/introducing-jsx.html) stands for **JavaScript XML**. **JSX** makes it easier to write and add HTML in React. **React** works by creating these **JSX** files, files where we've got **HTML** right in the body of a **JavaScript** file, and what happens behing the scenes is that the **HTML** is picked up by a **compiler** and it gets converted or compiled down to actual **JavaScript** and the compiler comes from the **React module** `var React = require("react");`. Inside the **React module** there is something called [**Babel**](https://babeljs.io/). **Babel** is a **JavaScript** compiler and that is able to take next generation **JavaScript** and compile it down to a version of **JavaScript** that every browser can understand, and this includes compiling **JSX** down to **plain old JavaScript**.
 
 ## ROOT DIV
 
@@ -88,7 +92,7 @@ ReactDOM.render(
 );
 ```
 
-## Final Code
+### Final Code
 
 ```js
 //Import the dependencies needed
@@ -112,7 +116,7 @@ ReactDOM.render(
 );
 ```
 
-## Course Code Challenge
+### Course Code Challenge
 
 The challenge below has been completed on CodeSandbox:
 
@@ -140,6 +144,58 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
+***
+
+# JavaScript Expressions in JSX & ES6 Template Literals
+
+We can also insert **JavaScript** code inside the **HTML** inside the **JavaScript** file, and to do it we simply wrap the **JavaScript** inside a set of **curly braces ** `{ }`. We can add **JavaScript** expressions inside it (`{Math.floor(Math.random() * 10)}`), however, we cannot write **JavaScript** statement (`if`) inside it. The big different between an [**expression** and a **statement**](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI) is that an **expression** will be evaluated to a value, it ends up equaling something, and a **statement** is actually asking the computer to do some work to evaluate the **statement** and then depending on that **statement** work out something.
+
+## JavaScript Expressions in JSX Code Example
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+const firstName = "Richard";
+const lastName = "Schmidt";
+const luckyNumber = 7;
+
+ReactDOM.render(
+  <div>
+    <h1>Hello {firstName} {lastName
+    }!</h1>
+    <p>My lucky number is {luckyNumber}</p>
+    <p>Here is a random number {Math.floor(Math.random() * 10)}</p>
+  </div>,
+  document.getElementById("root")
+);
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
