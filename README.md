@@ -2,7 +2,7 @@
 
 1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
 2. [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
-3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx--babel)</br>
+3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#introduction-to-jsx-and-babel-lesson)</br>
 3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
 3.2 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
 3.3 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
@@ -10,8 +10,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.3 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.4 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
-4. [JavaScript Expressions in JSX & ES6 Template Literals]()</br>
-4.1 [JavaScript Expressions in JSX Code Example]()</br>
+4. [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals)</br>
+4.1 [JavaScript Expressions in JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-example)</br>
+4.2 [JavaScript Expressions in JSX Code Challenge]()</br>
 
 ***
 
@@ -147,7 +148,7 @@ ReactDOM.render(
 
 ***
 
-# JavaScript Expressions in JSX & ES6 Template Literals
+# JavaScript Expressions in JSX & ES6 Template Literals Lesson
 
 We can also insert **JavaScript** code inside the **HTML** inside the **JavaScript** file, and to do it we simply wrap the **JavaScript** inside a set of **curly braces ** `{ }`. We can add **JavaScript** expressions inside it (`{Math.floor(Math.random() * 10)}`), however, we cannot write **JavaScript** statement (`if`) inside it. The big different between an [**expression** and a **statement**](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI) is that an **expression** will be evaluated to a value, it ends up equaling something, and a **statement** is actually asking the computer to do some work to evaluate the **statement** and then depending on that **statement** work out something.
 
@@ -163,8 +164,7 @@ const luckyNumber = 7;
 
 ReactDOM.render(
   <div>
-    <h1>Hello {firstName} {lastName
-    }!</h1>
+    <h1>Hello {firstName} {lastName}!</h1>
     <p>My lucky number is {luckyNumber}</p>
     <p>Here is a random number {Math.floor(Math.random() * 10)}</p>
   </div>,
@@ -172,8 +172,35 @@ ReactDOM.render(
 );
 ```
 
+## JavaScript Expressions in JSX Code Challenge
 
+The challenge below has been completed on CodeSandbox:
 
+- Create a react app from scratch.
+- It should display 2 paragraph HTML elements.
+- The paragraphs should say:
+- Created by YOURNAME.
+- Copyright CURRENTYEAR.
+- E.g.
+- Created by Richard
+- Copyright 2021
+- Get JavaScript to dynamically update the year
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+const name = "Richard";
+const currentYear = new Date().getFullYear();
+
+ReactDOM.render(
+  <div>
+    <p>Created by {name}</p>
+    <p>Copyright &copy; {currentYear}</p>
+  </div>,
+  document.getElementById("root")
+);
+```
 
 
 
