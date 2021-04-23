@@ -13,8 +13,8 @@
 4. [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals-lesson)</br>
 4.1 [JavaScript Expressions in JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-example)</br>
 4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
-5. [JSX Attributes & Styling React Elements Lesson]()</br>
-5.1 [JSX Attributes & Styling React Elements Final Code]()</br>
+5. [JSX Attributes & Styling React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-lesson)</br>
+5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
 
 ***
 
@@ -259,7 +259,7 @@ This error above is related to the `<!DOCTYPE html>` and that is because it does
 So we need to replace the code below:
 
 ```html
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>JSX Attributes & Styling React Elements Lesson</title>
@@ -296,7 +296,8 @@ With this one here, where we are telling it this is a `JSX` file, and the error 
 
 Below is the code from the `index.js` file:
 
-```jsimport React from "react";
+```js
+import React from "react";
 import ReactDOM from "react-dom";
 
 const img = "https://picsum.photos/200";
