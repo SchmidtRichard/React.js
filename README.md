@@ -10,9 +10,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.3 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
 &nbsp;&nbsp;&nbsp;&nbsp;3.3.4 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
-4. [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals)</br>
+4. [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals-lesson)</br>
 4.1 [JavaScript Expressions in JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-example)</br>
-4.2 [JavaScript Expressions in JSX Code Challenge]()</br>
+4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
+5. [JSX Attributes & Styling React Elements Lesson]()</br>
+5.1 [JSX Attributes & Styling React Elements Final Code]()</br>
 
 ***
 
@@ -181,10 +183,10 @@ The challenge below has been completed on CodeSandbox:
 - The paragraphs should say:
 - Created by YOURNAME.
 - Copyright CURRENTYEAR.
-- E.g.
+- Get JavaScript to dynamically update the year
+Example:
 - Created by Richard
 - Copyright 2021
-- Get JavaScript to dynamically update the year
 
 ```js
 import React from "react";
@@ -202,19 +204,164 @@ ReactDOM.render(
 );
 ```
 
+# JSX Attributes & Styling React Elements Lesson
 
+**JavaScript** `properties` can be used as `attributes` in **JSX**. Even though it looks like the code is **HTML**, it is still being rendered down to **JavaScript**, and in **JavaScript** the `property` to access all the `classes` that exist on an element is a `property` called [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className). **React** has done some handling behind the scenes so that even if we leave the code below as a class it would still work.
 
+```js
+import React from "react";
+import ReactDOM from "react-dom";
 
+ReactDOM.render(
+  <div>
+    <h1 class="heading">My Favourite Foods</h1>
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+```
 
+However we would get the error below once we went to the **Console** inside our browser:
 
+> :warning: **WARNING**</br></br>
+> index.js:27 Warning: Invalid DOM property `class`. Did you mean `className`?
 
+The proper way to code it is by using the `attribute` `className`, and as soon as we change it the error from the **Console** disapears. JSX convention to follow on naming it as if it is **JavaScript** instead of [**HTML**](https://www.w3schools.com/tags/ref_standardattributes.asp).
 
+```js
+import React from "react";
+import ReactDOM from "react-dom";
 
+ReactDOM.render(
+  <div>
+    <h1 className="heading">My Favourite Foods</h1>
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+```
 
+Another error we will find in the **Console** is the below:
 
+> :warning: **WARNING**</br></br>
+>Uncaught SyntaxError: Unexpected token '<'
 
+This error above is related to the `<!DOCTYPE html>` and that is because it does not know that the `index.js` is a `JSX` file that includes **HTML elements** rather than just a standard normal **JavaScript** file.
 
+So we need to replace the code below:
 
+```html
+=<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSX Attributes & Styling React Elements Lesson</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/javascript"></script>
+  </body>
+</html>
+```
+
+With this one here, where we are telling it this is a `JSX` file, and the error is now fixed:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSX Attributes & Styling React Elements Lesson</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/JSX"></script>
+  </body>
+</html>
+```
+
+`className` **attribute** is the most common attribute we will be adding, because this is the preferred way to **add styling** to **React elements**. Even though there are other ways to add style to these elements, including **inline styling**, the documentation still recommends to apply all the styling through **classes** that are specified withing the **CSS file** and then applying it to the **JSX file** using the `className` **attribute**.
+
+## JSX Attributes & Styling React Elements Final Code
+
+Below is the code from the `index.js` file:
+
+```jsimport React from "react";
+import ReactDOM from "react-dom";
+
+const img = "https://picsum.photos/200";
+
+ReactDOM.render(
+  <div>
+    <h1 className="heading" contentEditable="true" spellCheck="false">
+      My Favourite Foods
+    </h1>
+    <div>
+      <img alt="random" src={img} />
+      <img
+        className="food-img"
+        alt="churrasco"
+        src="https://i.pinimg.com/originals/a1/f5/98/a1f598a2d9ccfc3f20cbf308957b2fd3.jpg"
+      />
+      <img
+        className="food-img"
+        alt="bacon"
+        src="https://hips.hearstapps.com/vidthumb/images/microwave-bacon-square-1583428798.png"
+      />
+      <img
+        className="food-img"
+        alt="carbonara"
+        src="https://www.irishtimes.com/polopoly_fs/1.4220240.1585931224!/image/image.jpg_gen/derivatives/ratio_1x1_w1200/image.jpg"
+      />
+    </div>
+  </div>,
+  document.getElementById("root")
+);
+```
+
+Below is the code from the `index.html` file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSX Attributes & Styling React Elements Lesson</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/JSX"></script>
+  </body>
+</html>
+```
+
+Below is the code from the `styles.css` file:
+
+```css
+.heading {
+  color: red;
+}
+
+ul {
+  color: blue;
+}
+
+.food-img {
+  width: 100px;
+  height: 100px;
+}
+```
 
 
 
