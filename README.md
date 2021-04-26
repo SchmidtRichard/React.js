@@ -18,6 +18,9 @@
 6. [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
 6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
 6.2 [Inline Styling For React Elements Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-code-challenge)</br>
+7 [React Components Lesson]()</br>
+7.1 [ES6 Import and Export Feature]()</br>
+7.2 [React Components Final Code]()</br>
 
 ***
 
@@ -459,13 +462,284 @@ ReactDom.render(
 ```
 
 > :warning: **WARNING**</br></br>
->**let Statement**
-
->**Description**
-
->**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).
-
+>**[let Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)**</br>
+>**Description**</br>
+>**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).</br>
 >Just like `const` the `let` does not create properties of the `window` object when declared globally (in the top-most scope).
+
+***
+
+# React Components Lesson
+
+**React components** allows to break down a large website into individual compact and reusable **components**.
+
+**Components** allow us to split up a large file or a complex web structure into smaller components, and we also get the added benefit of **reusing** each of these ***components** when we need the same functionality.
+
+The code below is an example from a previous lesson, and we will split up the entire website into **smaller components**.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(
+  <div>
+    <h1>My Favourite Foods</h1>
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+```
+
+Below is the code splitted up into **smaller components**.
+
+To split the **h1** into a separete component we create a `function`, e.g. `Heading()`, and it is **React** convention to give the **components** a name that is in **Pascal case** (every single word has the first letter **capitalized**),  and this allow **React** to differentiate between the **custom components** versus the **HTML elements** that we are trying to get hold of that exists in the **DOM. The **heading function** is going to return a **HTML element** that is created using **JavaScript**, below is an example:
+
+```js
+//Create a React component called Heading
+function Heading() {
+  //h1 is the output of the heading function
+  return <h1>My Favourite Foods</h1>;
+}
+```
+
+Now the **custom heading component** can be used inside the **React code** as if it was a **HTML element**.
+
+> :warning: **WARNING**</br></br>
+>By convention, if we have a **HTML element** that has no children (nothing between the opening and closing tags), then the best practice is to have a self closing tag `<Heading />`.</br>
+>The [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) is generally accepted to be a good **reference** as to best practices on how to write or structure your code.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//Create a React component called Heading
+function Heading() {
+  //h1 is the output of the heading function
+  return <h1>My Favourite Foods</h1>;
+}
+
+ReactDOM.render(
+  <div>
+    <Heading />
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  </div>,
+  document.getElementById("root")
+);
+```
+
+## ES6 Import and Export Feature
+
+We will going to use an **ES6 feature** to import and export **React components** such as the `Heading` **component** from a separate file in order to keep the code cleaner and easier to read.
+In order to do that we create a file called **Heading.jxs** inside the **src** folder, note now that the **JSX file name** will be used to denote all of the **components** which are going to be written in **JSX**.
+
+As a convention we usually leave `index.js` as a plain **JavaScript** file, even if we are using some **React** and some **JSX** in it. And then we would have all of our components separated into individual files with the **JSX extension**.
+
+The final code would like the one below:
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//ES6 feature to import React components
+import Heading from "./Heading.jsx";
+import List from "./List.jsx";
+
+ReactDOM.render(
+  <div>
+    <Heading />
+    <List />
+  </div>,
+  document.getElementById("root")
+);
+```
+
+**Heading.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//Create a React component called Heading
+function Heading() {
+  //h1 is the output of the heading function
+  return <h1>My Favourite Foods</h1>;
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default Heading();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default Heading;
+```
+
+**List.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//Create a React component called List
+function List() {
+  return (
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  );
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default List();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default List;
+```
+
+## [React Components Final Code](https://codesandbox.io/s/react-components-forked-1mj7q?file=/src/components/App.jsx)
+
+> :warning: **WARNING**</br></br>
+>Normally, you will notice that in a lot of **React apps**, they don't have any **HTML elements** inside the **index.js** file.</br>
+>Instead **index.js** has pretty much no **custom code**, other than just a **custom component** called `App`, like the example below, and then in the **App.jsx** we have the start of the **component tree** and then we start seeing these **HTML elements** as well as **custom components**.
+>Another good practice is to create a folder called **components** inside the **src** folder and move all the **components** over there.
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//ES6 feature to import React components
+import App from "./components/App.jsx";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**App.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//ES6 feature to import React components
+import Heading from "./Heading.jsx";
+import List from "./List.jsx";
+
+function App() {
+  return (
+    <div>
+      <Heading />
+      <List />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Heading.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//Create a React component called Heading
+function Heading() {
+  //h1 is the output of the heading function
+  return <h1>My Favourite Foods</h1>;
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default Heading();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default Heading;
+```
+
+**List.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//Create a React component called List
+function List() {
+  return (
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  );
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default List();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default List;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
