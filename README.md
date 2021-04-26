@@ -15,6 +15,8 @@
 4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
 5. [JSX Attributes & Styling React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-lesson)</br>
 5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
+6. [Inline Styling For React Elements Lesson]()</br>
+6.1 [Inline Styling For React Elements Final Code]()</br>
 
 ***
 
@@ -364,7 +366,45 @@ ul {
 }
 ```
 
+# Inline Styling For React Elements Lesson
 
+In **HTML** we would use inline styling as below:
+
+```js
+ReactDOM.render(<h1 style="color: red">Hello World!</h1>, document.getElementById("root"));
+```
+
+However, we inside a **JSX** file, and in the code above we are actually proving a **string** as the value to the **style attribute**, which would work fine if it was **HTML**, but in **JavaScript** we need the value for the **style property** as a **JavaScript object** `{key: value}`. Whenever we want to inject some **JavaScript** into a **HTML element** in **JSX, we have to wrap it inside a set of **curly braces** `{}`.
+
+The code should look like the one below:
+
+```js
+ReactDOM.render(<h1 style={{color: "red"}}>Hello World!</h1>, document.getElementById("root"));
+```
+
+The code above has two sets of **curly braces** because the **style property** requires a value that is a **JavaScript object** and that **object** in order to be interpreted correcttly inside an **HTML element**, has to have a set of **curly braces** around it, instead of a normal **expression** like `{2 +3}` and the values for each of the `key value pairs` has to be a string (like in the code above).
+
+Using **inline styling** is pretty useful in certain cases, specially when we want styles for certain **React elements** to update on the fly, like the example below:
+
+## Inline Styling For React Elements Final Code
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+const customStyle = {
+  color: "red",
+  fontSize: "20px",
+  border: "1px solid black"
+};
+
+customStyle.color = "blue";
+
+ReactDOM.render(
+  <h1 style={customStyle}>Hello World!</h1>,
+  document.getElementById("root")
+);
+```
 
 
 
