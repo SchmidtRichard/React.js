@@ -17,7 +17,7 @@
 5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
 6. [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
 6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
-6.2 [Inline Styling For React Elements Code Challenge]()</br>
+6.2 [Inline Styling For React Elements Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-code-challenge)</br>
 
 ***
 
@@ -98,7 +98,7 @@ ReactDOM.render(
 );
 ```
 
-### Final Code
+### [Final Code](https://codesandbox.io/s/introduction-to-jsx-forked-10n9m)
 
 ```js
 //Import the dependencies needed
@@ -122,7 +122,7 @@ ReactDOM.render(
 );
 ```
 
-### Course Code Challenge
+### [Course Code Challenge](https://codesandbox.io/s/jsx-code-challenge-forked-r784i)
 
 The challenge below has been completed on CodeSandbox:
 
@@ -157,7 +157,7 @@ ReactDOM.render(
 
 We can also insert **JavaScript** code inside the **HTML** inside the **JavaScript** file, and to do it we simply wrap the **JavaScript** inside a set of **curly braces ** `{ }`. We can add **JavaScript** expressions inside it (`{Math.floor(Math.random() * 10)}`), however, we cannot write **JavaScript** statement (`if`) inside it. The big different between an [**expression** and a **statement**](https://www.youtube.com/watch?v=WVyCrI1cHi8&list=PL-xu4i_QDSxcoDNeh8rx5-pHCCTOg0XsI) is that an **expression** will be evaluated to a value, it ends up equaling something, and a **statement** is actually asking the computer to do some work to evaluate the **statement** and then depending on that **statement** work out something.
 
-## JavaScript Expressions in JSX Code Example
+## [JavaScript Expressions in JSX Code Example](https://codesandbox.io/s/javascript-expressions-in-jsx-forked-g2ck3)
 
 ```js
 import React from "react";
@@ -179,7 +179,7 @@ ReactDOM.render(
 
 ## JavaScript Expressions in JSX Code Challenge
 
-The challenge below has been completed on CodeSandbox:
+The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-qvr5s):
 
 - Create a react app from scratch.
 - It should display 2 paragraph HTML elements.
@@ -209,7 +209,7 @@ ReactDOM.render(
 
 ***
 
-# JSX Attributes & Styling React Elements Lesson
+# [JSX Attributes & Styling React Elements Lesson](https://codesandbox.io/s/jsx-attributes-and-styling-forked-b9cfi)
 
 **JavaScript** `properties` can be used as `attributes` in **JSX**. Even though it looks like the code is **HTML**, it is still being rendered down to **JavaScript**, and in **JavaScript** the `property` to access all the `classes` that exist on an element is a `property` called [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className). **React** has done some handling behind the scenes so that even if we leave the code below as a class it would still work.
 
@@ -297,7 +297,7 @@ With this one here, where we are telling it this is a `JSX` file, and the error 
 
 `className` **attribute** is the most common attribute we will be adding, because this is the preferred way to **add styling** to **React elements**. Even though there are other ways to add style to these elements, including **inline styling**, the documentation still recommends to apply all the styling through **classes** that are specified withing the **CSS file** and then applying it to the **JSX file** using the `className` **attribute**.
 
-## JSX Attributes & Styling React Elements Final Code
+## [JSX Attributes & Styling React Elements Final Code](https://codesandbox.io/s/jsx-attributes-and-styling-forked-3x8sl)
 
 Below is the code from the `index.js` file:
 
@@ -391,7 +391,7 @@ The code above has two sets of **curly braces** because the **style property** r
 
 Using **inline styling** is pretty useful in certain cases, specially when we want styles for certain **React elements** to update on the fly, like the example below:
 
-## Inline Styling For React Elements Final Code
+## [Inline Styling For React Elements Final Code](https://codesandbox.io/s/inline-styling-in-jsx-forked-3tb0c?file=/src/index.js)
 
 ```js
 import React from "react";
@@ -427,10 +427,6 @@ The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s
 import React from "react";
 import ReactDom from "react-dom";
 
-//var greeting;
-
-//const time = new Date().getHours;
-
 //To check other hours -> const date = new Date(2021, 1, 28, 19);
 const date = new Date();
 const currentTime = date.getHours();
@@ -461,7 +457,6 @@ ReactDom.render(
   document.getElementById("root")
 );
 ```
-
 
 > :warning: **WARNING**</br></br>
 >**let Statement**
