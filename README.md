@@ -15,8 +15,9 @@
 4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
 5. [JSX Attributes & Styling React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-lesson)</br>
 5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
-6. [Inline Styling For React Elements Lesson]()</br>
-6.1 [Inline Styling For React Elements Final Code]()</br>
+6. [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
+6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
+6.2 [Inline Styling For React Elements Code Challenge]()</br>
 
 ***
 
@@ -187,8 +188,8 @@ The challenge below has been completed on CodeSandbox:
 - Copyright CURRENTYEAR.
 - Get JavaScript to dynamically update the year
 Example:
-- Created by Richard
-- Copyright 2021
+    - Created by Richard
+    - Copyright 2021
 
 ```js
 import React from "react";
@@ -205,6 +206,8 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+
+***
 
 # JSX Attributes & Styling React Elements Lesson
 
@@ -366,6 +369,8 @@ ul {
 }
 ```
 
+***
+
 # Inline Styling For React Elements Lesson
 
 In **HTML** we would use inline styling as below:
@@ -406,18 +411,66 @@ ReactDOM.render(
 );
 ```
 
+## Inline Styling For React Elements Code Challenge
+
+The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-styling-practice-forked-ywzrx?file=/src/index.js):
+
+- Create a React app from scratch.
+- Show a single h1 that says "Good morning" if between midnight and 12PM.
+- or "Good Afternoon" if between 12PM and 6PM.
+- or "Good evening" if between 6PM and midnight.
+- Apply the "heading" style in the styles.css
+- Dynamically change the color of the h1 using inline css styles.
+- Morning = red, Afternoon = green, Night = blue.
+
+```js
+import React from "react";
+import ReactDom from "react-dom";
+
+//var greeting;
+
+//const time = new Date().getHours;
+
+//To check other hours -> const date = new Date(2021, 1, 28, 19);
+const date = new Date();
+const currentTime = date.getHours();
+let greeting;
+const customStyle = { color: "" };
+
+//Check out the current time is being printed correctly in the console
+console.log(currentTime);
+
+//time = new Date().getHours,
+if (currentTime < 12) {
+  greeting = "Good Morning";
+  customStyle.color = "red";
+} else if (currentTime < 18) {
+  greeting = "Good Afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "Good Night";
+  customStyle.color = "blue";
+}
+
+ReactDom.render(
+  <div>
+    <h1 className="heading" style={customStyle}>
+      {greeting}
+    </h1>
+  </div>,
+  document.getElementById("root")
+);
+```
 
 
+> :warning: **WARNING**</br></br>
+>**let Statement**
 
+>**Description**
 
+>**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).
 
-
-
-
-
-
-
-
+>Just like `const` the `let` does not create properties of the `window` object when declared globally (in the top-most scope).
 
 
 
