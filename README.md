@@ -18,9 +18,10 @@
 6. [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
 6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
 6.2 [Inline Styling For React Elements Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-code-challenge)</br>
-7 [React Components Lesson]()</br>
-7.1 [ES6 Import and Export Feature]()</br>
-7.2 [React Components Final Code]()</br>
+7. [React Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-lesson)</br>
+7.1 [ES6 Import and Export Feature](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#es6-import-and-export-feature)</br>
+7.2 [React Components Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-final-code)</br>
+7.3 [React Components Code Challenge]()</br>
 
 ***
 
@@ -462,9 +463,9 @@ ReactDom.render(
 ```
 
 > :warning: **WARNING**</br></br>
->**[let Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)**</br>
->**Description**</br>
->**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).</br>
+>**[let Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)**</br></br>
+>**Description**</br></br>
+>**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).</br></br>
 >Just like `const` the `let` does not create properties of the `window` object when declared globally (in the top-most scope).
 
 ***
@@ -666,6 +667,12 @@ function App() {
   );
 }
 
+/*
+ES6 feature to export React components
+we don't use parentheses (export default App();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
 export default App;
 ```
 
@@ -728,7 +735,131 @@ we want to use it as a component (inside a HTML tag...)
 export default List;
 ```
 
+## [React Components Code Challenge](https://codesandbox.io/s/react-components-practice-forked-pijd5?file=/src/components/App.jsx)
 
+Break down the code below into individual compact and reusable **React components**.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+const date = new Date();
+const currentTime = date.getHours();
+
+let greeting;
+
+const customStyle = {
+  color: ""
+};
+
+if (currentTime < 12) {
+  greeting = "Good Morning";
+  customStyle.color = "red";
+} else if (currentTime < 18) {
+  greeting = "Good Afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "Good Night";
+  customStyle.color = "blue";
+}
+
+ReactDOM.render(
+  <h1 className="heading" style={customStyle}>
+    {greeting}
+  </h1>,
+  document.getElementById("root")
+);
+```
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//ES6 feature to import React components
+import App from "./components/App.jsx";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**Heading.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//Create a React component called Heading
+function Heading() {
+  const date = new Date();
+  const currentTime = date.getHours();
+
+  let greeting;
+
+  const customStyle = {
+    color: ""
+  };
+
+  if (currentTime < 12) {
+    greeting = "Good Morning";
+    customStyle.color = "red";
+  } else if (currentTime < 18) {
+    greeting = "Good Afternoon";
+    customStyle.color = "green";
+  } else {
+    greeting = "Good Night";
+    customStyle.color = "blue";
+  }
+  //h1 is the output of the heading function
+  return (
+    <h1 className="heading" style={customStyle}>
+      {greeting}
+    </h1>
+  );
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default Heading();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default Heading;
+```
+
+**App.jsx**
+
+```js
+/*
+React needs to be imported as the code below is not actually JS
+it is in fact JSX because we have the HTML elements which are
+intermingling with actual JS code and we are only able to do this
+because the React module actually converts the code below into real
+JS using real JS functions such as document.createElement
+*/
+import React from "react";
+
+//ES6 feature to import React components
+import Heading from "./Heading.jsx";
+
+function App() {
+  return <Heading />;
+}
+
+/*
+ES6 feature to export React components
+we don't use parentheses (export default App();)
+because it would make it return immediatelly, instead
+we want to use it as a component (inside a HTML tag...)
+*/
+export default App;
+```
 
 
 
