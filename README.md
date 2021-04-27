@@ -25,7 +25,7 @@
 8. [JavaScript ES6 - Import, Export and Modules Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-lesson)</br>
 8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
 8.2 [Asterisk(*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
-8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge]()</br>
+8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
 
 ***
 
@@ -741,7 +741,7 @@ export default List;
 
 ## [React Components Code Challenge](https://codesandbox.io/s/react-components-practice-forked-pijd5?file=/src/components/App.jsx)
 
-Break down the code below into individual compact and reusable **React components**.
+:question: Break down the code below into individual compact and reusable **React components**.
 
 ```js
 import React from "react";
@@ -775,7 +775,7 @@ ReactDOM.render(
 );
 ```
 
-**Solution**
+:heavy_check_mark: **Solution**
 
 **index.js**
 
@@ -980,7 +980,7 @@ ReactDOM.render(
 
 ## JavaScript ES6 - Import, Export and Modules [Code Challenge](https://codesandbox.io/s/es6-importexport-practice-forked-2e0hu?file=/src/index.js:0-469)
 
-Import the correct **functions** to the code below in order to make it work:
+:question: Import the correct **functions** to the code below in order to make it work:
 
 **index.js**
 
@@ -1023,7 +1023,7 @@ function divide(n1, n2) {
 }
 ```
 
-**Solution**
+:heavy_check_mark: **Solution**
 
 **index.js**
 
