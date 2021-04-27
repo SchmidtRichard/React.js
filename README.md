@@ -21,7 +21,10 @@
 7. [React Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-lesson)</br>
 7.1 [ES6 Import and Export Feature](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#es6-import-and-export-feature)</br>
 7.2 [React Components Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-final-code)</br>
-7.3 [React Components Code Challenge]()</br>
+7.3 [React Components Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-code-challenge)</br>
+8. [JavaScript ES6 - Import, Export and Modules Lesson]()</br>
+8.1 [JavaScript ES6 - Import, Export and Modules Final Code]()</br>
+8.2 [Asterisk(*) Wildcard]()</br>
 
 ***
 
@@ -236,7 +239,7 @@ ReactDOM.render(
 
 However we would get the error below once we went to the **Console** inside our browser:
 
-> :warning: **WARNING**</br></br>
+> :x: **ERROR**</br>
 > index.js:27 Warning: Invalid DOM property `class`. Did you mean `className`?
 
 The proper way to code it is by using the `attribute` `className`, and as soon as we change it the error from the **Console** disapears. JSX convention to follow on naming it as if it is **JavaScript** instead of [**HTML**](https://www.w3schools.com/tags/ref_standardattributes.asp).
@@ -260,7 +263,7 @@ ReactDOM.render(
 
 Another error we will find in the **Console** is the below:
 
-> :warning: **WARNING**</br></br>
+> :x: **ERROR**</br>
 >Uncaught SyntaxError: Unexpected token '<'
 
 This error above is related to the `<!DOCTYPE html>` and that is because it does not know that the `index.js` is a `JSX` file that includes **HTML elements** rather than just a standard normal **JavaScript** file.
@@ -510,7 +513,7 @@ function Heading() {
 Now the **custom heading component** can be used inside the **React code** as if it was a **HTML element**.
 
 > :warning: **WARNING**</br></br>
->By convention, if we have a **HTML element** that has no children (nothing between the opening and closing tags), then the best practice is to have a self closing tag `<Heading />`.</br>
+>By convention, if we have a **HTML element** that has no children (nothing between the opening and closing tags), then the best practice is to have a self closing tag `<Heading />`.</br></br>
 >The [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) is generally accepted to be a good **reference** as to best practices on how to write or structure your code.
 
 ```js
@@ -626,8 +629,8 @@ export default List;
 ## [React Components Final Code](https://codesandbox.io/s/react-components-forked-1mj7q?file=/src/components/App.jsx)
 
 > :warning: **WARNING**</br></br>
->Normally, you will notice that in a lot of **React apps**, they don't have any **HTML elements** inside the **index.js** file.</br>
->Instead **index.js** has pretty much no **custom code**, other than just a **custom component** called `App`, like the example below, and then in the **App.jsx** we have the start of the **component tree** and then we start seeing these **HTML elements** as well as **custom components**.
+>Normally, you will notice that in a lot of **React apps**, they don't have any **HTML elements** inside the **index.js** file.</br></br>
+>Instead **index.js** has pretty much no **custom code**, other than just a **custom component** called `App`, like the example below, and then in the **App.jsx** we have the start of the **component tree** and then we start seeing these **HTML elements** as well as **custom components**.</br></br>
 >Another good practice is to create a folder called **components** inside the **src** folder and move all the **components** over there.
 
 **index.js**
@@ -861,6 +864,116 @@ we want to use it as a component (inside a HTML tag...)
 export default App;
 ```
 
+***
+
+# JavaScript ES6 - Import, Export and Modules Lesson
+
+**Import, export** and the concept of **modules** allow us to be able to start aplitting up large **JavaScript** files into individual more manageable **components**. And this is what **React components** are leveraging from**.
+
+Once we export a file e.g. `math.js` then it becomes a new **module** and we can export whatever it is that we want to be used elsewhere from this file.
+
+When we are importing something that is the **default**, we can actually name it whatever we want in the file we imported it e.g. `pie` instead of `pi`, see example below:
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//import the constant pi from the math.js file
+import pie from "./math.js";
+
+ReactDOM.render(
+  <ul>
+    <li>{pie}</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>,
+  document.getElementById("root")
+);
+```
+
+**math.js**
+
+```js
+const pi = 3.1415962;
+
+//specify what we want to export, the value of the constant pi
+export default pi;
+```
+
+## JavaScript ES6 - Import, Export and Modules Final Code
+
+in addition to creating a **default export**, which means that when another file writes **import something** from `file X`, that something is going to be equivalent to the **default export**, but if you want to **import more than one thing** then we can write another **export statement** with a set of curly braces `{}` and inside the curly braces we can define all the **non-default exports**, e.g. `export { doublePi, triplePi };` and in order to **import** then inside the other file (`index.js`), we can add it along with our **default export** using a `,` and a set of `{}`, e.g. `import pi, { doublePi, triplePi } from "./math.js";`, and in this case the names matter, so we cannot change the names because it will not be able to recognize it from the list of exports `export { doublePi, triplePi };`.
+
+With the **default** there is only and there can be **only one default export per file**, but with the other ones we differentiate them by their names.
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//import the constant pi from the math.js file
+import pi, { doublePi, triplePi } from "./math.js";
+
+ReactDOM.render(
+  <ul>
+    <li>{pi}</li>
+    <li>{doublePi()}</li>
+    <li>{triplePi()}</li>
+  </ul>,
+  document.getElementById("root")
+);
+```
+
+**math.js**
+
+```js
+const pi = 3.1415962;
+
+function doublePi() {
+  return pi * 2;
+}
+
+function triplePi() {
+  return pi * 3;
+}
+
+//specify what we want to export, the value of the constant pi
+export default pi;
+
+export { doublePi, triplePi };
+```
+
+## Asterisk(*) Wildcard
+
+`doublePi` and `triplePi` are `functions` so in order to get the value or the return of it, we have to add the **parentheses** `()` to activate it, `<li>{doublePi()}</li><li>{triplePi()}</li>`. However, If we don't want to separate out the difference between the **default** and the **exports**, then we can use the **wildcard** `*`, the asterisk sign basically says ***import everything*** but we have to give it a name so we can use it in the file, e.g. `myPI`. See example below `index.js`:</br>
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//import the constant pi from the math.js file
+//import pi, { doublePi, triplePi } from "./math.js";
+
+//We can use the wildcard *
+import * as myPI from "./math.js";
+
+console.log(myPI);
+
+ReactDOM.render(
+  <ul>
+    <li>{myPI.default}</li>
+    <li>{myPI.doublePi()}</li>
+    <li>{myPI.triplePi()}</li>
+  </ul>,
+  document.getElementById("root")
+);
+```
+
+> :warning: **WARNING**</br></br>
+>Note the `math.js` file does not require any changes to use the asterisk wildcard. However, if we use a wildcard ten we will lose the benefit of having a **single default export**. Using the **single default export** and incorporating specific functions makes the code more clear and it means that we are only importing the things that we actually need. This the reason why the wildcard import is discouraged in many style guides.</br>
 
 
 
