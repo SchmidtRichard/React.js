@@ -22,9 +22,10 @@
 7.1 [ES6 Import and Export Feature](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#es6-import-and-export-feature)</br>
 7.2 [React Components Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-final-code)</br>
 7.3 [React Components Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-code-challenge)</br>
-8. [JavaScript ES6 - Import, Export and Modules Lesson]()</br>
-8.1 [JavaScript ES6 - Import, Export and Modules Final Code]()</br>
-8.2 [Asterisk(*) Wildcard]()</br>
+8. [JavaScript ES6 - Import, Export and Modules Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-lesson)</br>
+8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
+8.2 [Asterisk(*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
+8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge]()</br>
 
 ***
 
@@ -239,7 +240,7 @@ ReactDOM.render(
 
 However we would get the error below once we went to the **Console** inside our browser:
 
-> :x: **ERROR**</br>
+> :x: **ERROR**</br></br>
 > index.js:27 Warning: Invalid DOM property `class`. Did you mean `className`?
 
 The proper way to code it is by using the `attribute` `className`, and as soon as we change it the error from the **Console** disapears. JSX convention to follow on naming it as if it is **JavaScript** instead of [**HTML**](https://www.w3schools.com/tags/ref_standardattributes.asp).
@@ -263,7 +264,7 @@ ReactDOM.render(
 
 Another error we will find in the **Console** is the below:
 
-> :x: **ERROR**</br>
+> :x: **ERROR**</br></br>
 >Uncaught SyntaxError: Unexpected token '<'
 
 This error above is related to the `<!DOCTYPE html>` and that is because it does not know that the `index.js` is a `JSX` file that includes **HTML elements** rather than just a standard normal **JavaScript** file.
@@ -774,6 +775,8 @@ ReactDOM.render(
 );
 ```
 
+**Solution**
+
 **index.js**
 
 ```js
@@ -902,7 +905,7 @@ const pi = 3.1415962;
 export default pi;
 ```
 
-## JavaScript ES6 - Import, Export and Modules Final Code
+## JavaScript ES6 - Import, Export and Modules [Final Code](https://codesandbox.io/s/es6-importexport-modules-forked-w57lq?file=/src/index.js)
 
 in addition to creating a **default export**, which means that when another file writes **import something** from `file X`, that something is going to be equivalent to the **default export**, but if you want to **import more than one thing** then we can write another **export statement** with a set of curly braces `{}` and inside the curly braces we can define all the **non-default exports**, e.g. `export { doublePi, triplePi };` and in order to **import** then inside the other file (`index.js`), we can add it along with our **default export** using a `,` and a set of `{}`, e.g. `import pi, { doublePi, triplePi } from "./math.js";`, and in this case the names matter, so we cannot change the names because it will not be able to recognize it from the list of exports `export { doublePi, triplePi };`.
 
@@ -974,6 +977,124 @@ ReactDOM.render(
 
 > :warning: **WARNING**</br></br>
 >Note the `math.js` file does not require any changes to use the asterisk wildcard. However, if we use a wildcard ten we will lose the benefit of having a **single default export**. Using the **single default export** and incorporating specific functions makes the code more clear and it means that we are only importing the things that we actually need. This the reason why the wildcard import is discouraged in many style guides.</br>
+
+## JavaScript ES6 - Import, Export and Modules [Code Challenge](https://codesandbox.io/s/es6-importexport-practice-forked-2e0hu?file=/src/index.js:0-469)
+
+Import the correct **functions** to the code below in order to make it work:
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//Import the add, multiply, subtract and divide functions
+//from the calculator.js file.
+//If successful, your website should look the same as the Final.png
+
+ReactDOM.render(
+  <ul>
+    <li>{add(1, 2)}</li>
+    <li>{multiply(2, 3)}</li>
+    <li>{subtract(7, 2)}</li>
+    <li>{divide(5, 2)}</li>
+  </ul>,
+  document.getElementById("root")
+);
+```
+
+**calculator.js**
+
+```js
+function add(n1, n2) {
+  return n1 + n2;
+}
+
+function multiply(n1, n2) {
+  return n1 * n2;
+}
+
+function subtract(n1, n2) {
+  return n1 - n2;
+}
+
+function divide(n1, n2) {
+  return n1 / n2;
+}
+```
+
+**Solution**
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+//Import the add, multiply, subtract and divide functions
+//from the calculator.js file.
+//If successful, your website should look the same as the Final.png
+import add, { multiply, subtract, divide } from "./calculator.js";
+
+ReactDOM.render(
+  <ul>
+    <li>{add(1, 2)}</li>
+    <li>{multiply(2, 3)}</li>
+    <li>{subtract(7, 2)}</li>
+    <li>{divide(5, 2)}</li>
+  </ul>,
+  document.getElementById("root")
+);
+```
+
+**calculator.js**
+
+```js
+function add(n1, n2) {
+  return n1 + n2;
+}
+
+function multiply(n1, n2) {
+  return n1 * n2;
+}
+
+function subtract(n1, n2) {
+  return n1 - n2;
+}
+
+function divide(n1, n2) {
+  return n1 / n2;
+}
+
+export default add;
+
+export { multiply, subtract, divide };
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
