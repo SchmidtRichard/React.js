@@ -1,6 +1,7 @@
 # Table of Contents
 
 1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
+1.1 [Create a React App in Your Local Environment]()</br>
 2. [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
 3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#introduction-to-jsx-and-babel-lesson)</br>
 3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
@@ -26,12 +27,28 @@
 8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
 8.2 [Asterisk(*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
 8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
+9. [React Properties (Props) Lesson]()</br>
+9.1 [React Properties (Props) Code Challenge]()</br>
 
 ***
 
 # React.js
 
 [**React**](https://reactjs.org/) is a front-end, JavaScript library for building user interfaces or UI components. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.
+
+## [Create a React App in Your Local Environment](https://reactjs.org/docs/create-a-new-react-app.html)
+
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have `Node >= 10.16 and npm >= 5.6` on your machine. To create a project, run:
+
+```js
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+Then open up the project folder and delete everything that is not needed, only leave: `public/index.html`, `src/index.js`, `node_modules`, `.gitignore`, `package-lock.json`, `package.json`, and `README.md`.
+
+***
 
 # CodeSandbox
 
@@ -1071,9 +1088,124 @@ export default add;
 export { multiply, subtract, divide };
 ```
 
+***
 
+# React Properties (Props) Lesson
 
+**[Props](https://www.w3schools.com/react/react_props.asp)** are arguments passed into **React components**, they are passed to components via **HTML attributes**. **React Props** are like **function arguments in JavaScript** and **attributes in HTML**. To send props into a **component**, use the same syntax as **HTML attributes**.
 
+As we can see on the code below, it is very repetitive and very long to create this page as per this code, and this is a perfect use case for **React components** because of these repetitive **elements** 
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+
+    <h2>Beyonce</h2>
+    <img
+      src="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      alt="avatar_img"
+    />
+    <p>+123 456 789</p>
+    <p>b@beyonce.com</p>
+
+    <h2>Jack Bauer</h2>
+    <img
+      src="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg"
+      alt="avatar_img"
+    />
+    <p>+987 654 321</p>
+    <p>jack@nowhere.com</p>
+
+    <h2>Chuck Norris</h2>
+    <img
+      src="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png"
+      alt="avatar_img"
+    />
+    <p>+918 372 574</p>
+    <p>gmail@chucknorris.com</p>
+  </div>,
+  document.getElementById("root")
+);
+``` 
+
+We can pass properties (props) to our **custom React components** using very similar syntax to what we have in **HTML**. Example is `<Card name="Beyonce"/>`, when this `Card` **component** gets created, it will have a **property** called `name` that is set to **Beyonce**, and we can get a hold of it by adding a name to the **input** to access these things that are sent over, and it is normal to call it **props**
+
+For example inside the **Card()** function we can **console.log** the value of the props, in the example below we will get **Beyonce**:
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+function Card(props) {
+  console.log(props);
+
+  return (
+    <div>
+      <h2>Beyonce</h2>
+      <img
+        src="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+        alt="avatar_img"
+      />
+      <p>+123 456 789</p>
+      <p>b@beyonce.com</p>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+    <Card name="Beyonce" />
+    <input id="fName" placeholder="Enter your first name" />
+  </div>,
+  document.getElementById("root")
+);
+```
+
+Now with the updated [code below](https://codesandbox.io/s/react-props-forked-5b42b?file=/src/index.js), the `Card(props)` **function** no longer contains any Beyonce's specific information, and now we can create as many of these cards as we need with different pieces of information.
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+function Card(props) {
+  console.log(props);
+
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <img src={props.img} alt="avatar_img" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+    <Card
+      name="Beyonce"
+      img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      tel="+123 456 789"
+      email="b@beyonce.com"
+    />
+    <Card
+      name="Panda Maria Pandacio"
+      img="https://i.pinimg.com/originals/e0/3d/5b/e03d5b812b2734826f76960eca5b5541.jpg"
+      tel="+452 965 548"
+      email="pandacio@com.poa"
+    />
+  </div>,
+  document.getElementById("root")
+);
+```
+
+## React Properties (Props) Code Challenge
 
 
 
