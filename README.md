@@ -1,7 +1,7 @@
 # Table of Contents
 
 1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
-1.1 [Create a React App in Your Local Environment]()</br>
+1.1 [Create a React App in Your Local Environment](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#create-a-react-app-in-your-local-environment)</br>
 2. [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
 3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#introduction-to-jsx-and-babel-lesson)</br>
 3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
@@ -27,8 +27,8 @@
 8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
 8.2 [Asterisk(*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
 8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
-9. [React Properties (Props) Lesson]()</br>
-9.1 [React Properties (Props) Code Challenge]()</br>
+9. [React Properties (Props) Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-lesson)</br>
+9.1 [React Properties (Props) Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-code-challenge)</br>
 
 ***
 
@@ -147,9 +147,9 @@ ReactDOM.render(
 );
 ```
 
-### [Course Code Challenge](https://codesandbox.io/s/jsx-code-challenge-forked-r784i)
+### Course Code Challenge
 
-The challenge below has been completed on CodeSandbox:
+:question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/jsx-code-challenge-forked-r784i):
 
 - Create a react app from scratch.
 - It should display a h1 heading.
@@ -204,7 +204,7 @@ ReactDOM.render(
 
 ## JavaScript Expressions in JSX Code Challenge
 
-The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-qvr5s):
+:question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-qvr5s):
 
 - Create a react app from scratch.
 - It should display 2 paragraph HTML elements.
@@ -438,7 +438,7 @@ ReactDOM.render(
 
 ## Inline Styling For React Elements Code Challenge
 
-The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-styling-practice-forked-ywzrx?file=/src/index.js):
+:question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-styling-practice-forked-ywzrx?file=/src/index.js):
 
 - Create a React app from scratch.
 - Show a single h1 that says "Good morning" if between midnight and 12PM.
@@ -1207,6 +1207,189 @@ ReactDOM.render(
 
 ## React Properties (Props) Code Challenge
 
+:question: The challenge below has been completed on [codeSandbox](https://codesandbox.io/s/react-props-practice-forked-mgt5p?file=/src/index.js:158-509).
+
+- Apply CSS styles to App.jsx component to match the appearance on the completed [app](https://c6fkx.csb.app/):
+- Extract the contact card as a reusable Card component.
+- Use props to render the default Beyonce contact card so the Card component can be reused for other contacts.
+- Import the contacts.js file to create card components.
+
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**contacts.js**
+
+```js
+const contacts = [
+  {
+    name: "Beyonce",
+    imgURL:
+      "https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+    phone: "+123 456 789",
+    email: "b@beyonce.com"
+  },
+  {
+    name: "Jack Bauer",
+    imgURL:
+      "https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+    phone: "+987 654 321",
+    email: "jack@nowhere.com"
+  },
+  {
+    name: "Chuck Norris",
+    imgURL:
+      "https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png",
+    phone: "+918 372 574",
+    email: "gmail@chucknorris.com"
+  }
+];
+```
+
+**App.jsx**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
+      <div className="card">
+        <div className="top">
+          <h2>Beyonce</h2>
+          <img
+            src="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+            alt="avatar_img"
+          />
+        </div>
+        <div className="bottom">
+          <p>+123 456 789</p>
+          <p>b@beyonce.com</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+:heavy_check_mark: **Solution**
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+```
+
+**Cards.jsx**
+
+```js
+import React from "react";
+
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="top">
+        <h2 className="name">{props.name}</h2>
+        <img className="circle-img" src={props.img} alt="avatar_img" />
+      </div>
+      <div className="bottom">
+        <p className="info">{props.tel}</p>
+        <p className="info">{props.email}</p>
+      </div>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+**contacts.js**
+
+```js
+//Array of JavaScript objects
+const contacts = [
+  {
+    name: "Beyonce",
+    imgURL:
+      "https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+    phone: "+123 456 789",
+    email: "b@beyonce.com"
+  },
+  {
+    name: "Jack Bauer",
+    imgURL:
+      "https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+    phone: "+987 654 321",
+    email: "jack@nowhere.com"
+  },
+  {
+    name: "Chuck Norris",
+    imgURL:
+      "https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png",
+    phone: "+918 372 574",
+    email: "gmail@chucknorris.com"
+  }
+];
+
+export default contacts;
+```
+
+**App.jsx**
+
+```js
+import React from "react";
+import Card from "./Card.jsx";
+import contacts from "../contacts.js";
+
+function App() {
+  //log contacts constant
+  console.log(contacts);
+
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
+      <Card
+        //Properties
+        name={contacts[0].name}
+        img={contacts[0].imgURL}
+        tel={contacts[0].phone}
+        email={contacts[0].email}
+      />
+      <Card
+        //Properties
+        name={contacts[1].name}
+        img={contacts[1].imgURL}
+        tel={contacts[1].phone}
+        email={contacts[1].email}
+      />
+      <Card
+        //Properties
+        name={contacts[2].name}
+        img={contacts[2].imgURL}
+        tel={contacts[2].phone}
+        email={contacts[2].email}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
 
 
 
@@ -1225,6 +1408,11 @@ ReactDOM.render(
 
 
 
+
+
+***
+
+# List of Projects Created in the React.js Module
 
 
 
