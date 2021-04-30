@@ -29,6 +29,8 @@
 8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
 9. [React Properties (Props) Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-lesson)</br>
 9.1 [React Properties (Props) Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-code-challenge)</br>
+10. [React DevTools Lesson]()</br>
+10. [Final Code with More Components]()</br>
 
 ***
 
@@ -1207,7 +1209,7 @@ ReactDOM.render(
 
 ## React Properties (Props) Code Challenge
 
-:question: The challenge below has been completed on [codeSandbox](https://codesandbox.io/s/react-props-practice-forked-mgt5p?file=/src/index.js:158-509).
+:question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-props-practice-forked-mgt5p?file=/src/index.js:158-509).
 
 - Apply CSS styles to App.jsx component to match the appearance on the completed [app](https://c6fkx.csb.app/):
 - Extract the contact card as a reusable Card component.
@@ -1391,7 +1393,123 @@ function App() {
 export default App;
 ```
 
+# React DevTools Lesson
 
+In this lesson we are going to separate out a **React app** into even smaller **components** which are more specialized. And use **React developer tools** to help **debug** and **manage** all of these components. We are going to use the [code](https://codesandbox.io/s/react-devtools-dk9gj?fontsize=14&file=/src/index.js) from the previous challenge for it.
+
+Inside the **Card**jsx component** (code below) there are things which might work better as a **single component** because in the future we might want to **reuse it**.
+
+```js
+import React from "react";
+
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="top">
+        <h2 className="name">{props.name}</h2>
+        <img className="circle-img" src={props.img} alt="avatar_img" />
+      </div>
+      <div className="bottom">
+        <p className="info">{props.tel}</p>
+        <p className="info">{props.email}</p>
+      </div>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+## [Final Code](https://codesandbox.io/s/react-devtools-forked-wlc0k?file=/src/components/Detail.jsx:0-131) with More **Components**:
+
+**Avatar.jsx**
+
+```js
+import React from "react";
+
+function Avatar(props) {
+  return <img className="circle-img" src={props.img} alt="avatar_img" />;
+}
+
+export default Avatar;
+```
+
+**Detail.jsx**
+
+```js
+import React from "react";
+
+function Detail(props) {
+  return <p className="info">{props.detailInfo}</p>;
+}
+
+export default Detail;
+```
+
+**App.jsx**
+
+```js
+import React from "react";
+import Card from "./Card";
+import contacts from "../contacts";
+import Avatar from "./Avatar";
+
+function App() {
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
+
+      <Avatar img="https://upload.wikimedia.org/wikipedia/commons/c/cd/Panda_Cub_from_Wolong%2C_Sichuan%2C_China.JPG" />
+
+      <Card
+        name={contacts[0].name}
+        img={contacts[0].imgURL}
+        tel={contacts[0].phone}
+        email={contacts[0].email}
+      />
+      <Card
+        name={contacts[1].name}
+        img={contacts[1].imgURL}
+        tel={contacts[1].phone}
+        email={contacts[1].email}
+      />
+      <Card
+        name={contacts[2].name}
+        img={contacts[2].imgURL}
+        tel={contacts[2].phone}
+        email={contacts[2].email}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Card.jsx**
+
+```js
+import React from "react";
+import Avatar from "./Avatar.jsx";
+import Detail from "./Detail.jsx";
+
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="top">
+        <h2 className="name">{props.name}</h2>
+        <Avatar img={props.img} />
+      </div>
+      <div className="bottom">
+        <Detail detailInfo={props.tel} />
+        <Detail detailInfo={props.email} />
+      </div>
+    </div>
+  );
+}
+
+export default Card;
+```
 
 
 
