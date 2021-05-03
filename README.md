@@ -1,38 +1,38 @@
 # Table of Contents
 
-1. [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
-1.1 [Create a React App in Your Local Environment](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#create-a-react-app-in-your-local-environment)</br>
-2. [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
-3. [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#introduction-to-jsx-and-babel-lesson)</br>
-3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
-3.2 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
-3.3 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.3 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
-&nbsp;&nbsp;&nbsp;&nbsp;3.3.4 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
-4. [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals-lesson)</br>
-4.1 [JavaScript Expressions in JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-example)</br>
-4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
-5. [JSX Attributes & Styling React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-lesson)</br>
-5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
-6. [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
-6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
-6.2 [Inline Styling For React Elements Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-code-challenge)</br>
-7. [React Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-lesson)</br>
-7.1 [ES6 Import and Export Feature](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#es6-import-and-export-feature)</br>
-7.2 [React Components Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-final-code)</br>
-7.3 [React Components Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-code-challenge)</br>
-8. [JavaScript ES6 - Import, Export and Modules Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-lesson)</br>
-8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
-8.2 [Asterisk(*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
-8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
-9. [React Properties (Props) Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-lesson)</br>
-9.1 [React Properties (Props) Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-code-challenge)</br>
-10. [React DevTools Lesson]()</br>
-10. [Final Code with More Components]()</br>
+1.  [React.js](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#reactjs)</br>
+    1.1 [Create a React App in Your Local Environment](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#create-a-react-app-in-your-local-environment)</br>
+2.  [CodeSandbox](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#codesandbox)</br>
+3.  [Introduction to JSX and Babel Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#introduction-to-jsx-and-babel-lesson)</br>
+    3.1 [ROOT DIV](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#root-div)</br>
+    3.2 [Dependencies Used](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#dependencies-used)</br>
+    3.3 [JSX vs Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-vs-plain-vanilla-javascript-code-example)</br>
+        3.3.1 [JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-code-example)</br>
+        3.3.2 [Plain Vanilla JavaScript Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#plain-vanilla-javascript-code-example)</br>
+        3.3.3 [Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code)</br>
+        3.3.4 [Course Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#course-code-challenge)</br>
+4.  [JavaScript Expressions in JSX & ES6 Template Literals Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx--es6-template-literals-lesson)</br>
+    4.1 [JavaScript Expressions in JSX Code Example](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-example)</br>
+    4.2 [JavaScript Expressions in JSX Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-expressions-in-jsx-code-challenge)</br>
+5.  [JSX Attributes & Styling React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-lesson)</br>
+    5.1 [JSX Attributes & Styling React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#jsx-attributes--styling-react-elements-final-code)</br>
+6.  [Inline Styling For React Elements Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-lesson)</br>
+    6.1 [Inline Styling For React Elements Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-final-code)</br>
+    6.2 [Inline Styling For React Elements Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#inline-styling-for-react-elements-code-challenge)</br>
+7.  [React Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-lesson)</br>
+    7.1 [ES6 Import and Export Feature](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#es6-import-and-export-feature)</br>
+    7.2 [React Components Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-final-code)</br>
+    7.3 [React Components Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-components-code-challenge)</br>
+8.  [JavaScript ES6 - Import, Export and Modules Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-lesson)</br>
+    8.1 [JavaScript ES6 - Import, Export and Modules Final Code](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-final-code)</br>
+    8.2 [Asterisk(\*) Wildcard](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#asterisk-wildcard)</br>
+    8.3 [JavaScript ES6 - Import, Export and Modules Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#javascript-es6---import-export-and-modules-code-challenge)</br>
+9.  [React Properties (Props) Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-lesson)</br>
+    9.1 [React Properties (Props) Code Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-properties-props-code-challenge)</br>
+10. [React DevTools Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-devtools-lesson)</br>
+    10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 
-***
+* * *
 
 # React.js
 
@@ -50,7 +50,7 @@ npm start
 
 Then open up the project folder and delete everything that is not needed, only leave: `public/index.html`, `src/index.js`, `node_modules`, `.gitignore`, `package-lock.json`, `package.json`, and `README.md`.
 
-***
+* * *
 
 # CodeSandbox
 
@@ -60,7 +60,7 @@ It is a browser based development environment that was initially created with Re
 
 It can be embedded into medium blog posts and web pages, it allows us to build and deploy within the same application and a lot of other things including really good syntax highlighting and linting as well.
 
-***
+* * *
 
 # Introduction to JSX and Babel Lesson
 
@@ -136,7 +136,7 @@ import ReactDOM from "react-dom";
 In order to use React to actually create something on screen
 we are going to use the render method by tapping into ReactDOM
 The render function takes 3 inputs:
-ReactDOM.render(WHAT TO SHOW, WHERE TO SHOW IT, OPTIONAL CALLBACK 
+ReactDOM.render(WHAT TO SHOW, WHERE TO SHOW IT, OPTIONAL CALLBACK
 TO TELL US WHEN THAT RENDER FUNCTION HAS COMPLETED);
 WHERE TO SHOW IT: a particular HTML element that we will target inside index.html
 */
@@ -153,10 +153,10 @@ ReactDOM.render(
 
 :question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/jsx-code-challenge-forked-r784i):
 
-- Create a react app from scratch.
-- It should display a h1 heading.
-- It should display an unordered list (bullet points).
-- It should contain 3 list elements.
+-   Create a react app from scratch.
+-   It should display a h1 heading.
+-   It should display an unordered list (bullet points).
+-   It should contain 3 list elements.
 
 **Full code**:
 
@@ -178,7 +178,7 @@ ReactDOM.render(
 );
 ```
 
-***
+* * *
 
 # JavaScript Expressions in JSX & ES6 Template Literals Lesson
 
@@ -208,15 +208,15 @@ ReactDOM.render(
 
 :question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/javascript-expressions-in-jsx-practice-forked-qvr5s):
 
-- Create a react app from scratch.
-- It should display 2 paragraph HTML elements.
-- The paragraphs should say:
-- Created by YOURNAME.
-- Copyright CURRENTYEAR.
-- Get JavaScript to dynamically update the year
-Example:
-    - Created by Richard
-    - Copyright 2021
+-   Create a react app from scratch.
+-   It should display 2 paragraph HTML elements.
+-   The paragraphs should say:
+-   Created by YOURNAME.
+-   Copyright CURRENTYEAR.
+-   Get JavaScript to dynamically update the year
+    Example:
+        \- Created by Richard
+        \- Copyright 2021
 
 ```js
 import React from "react";
@@ -234,7 +234,7 @@ ReactDOM.render(
 );
 ```
 
-***
+* * *
 
 # [JSX Attributes & Styling React Elements Lesson](https://codesandbox.io/s/jsx-attributes-and-styling-forked-b9cfi)
 
@@ -284,7 +284,7 @@ ReactDOM.render(
 Another error we will find in the **Console** is the below:
 
 > :x: **ERROR**</br></br>
->Uncaught SyntaxError: Unexpected token '<'
+> Uncaught SyntaxError: Unexpected token '&lt;'
 
 This error above is related to the `<!DOCTYPE html>` and that is because it does not know that the `index.js` is a `JSX` file that includes **HTML elements** rather than just a standard normal **JavaScript** file.
 
@@ -396,7 +396,7 @@ ul {
 }
 ```
 
-***
+* * *
 
 # Inline Styling For React Elements Lesson
 
@@ -406,7 +406,7 @@ In **HTML** we would use inline styling as below:
 ReactDOM.render(<h1 style="color: red">Hello World!</h1>, document.getElementById("root"));
 ```
 
-However, we inside a **JSX** file, and in the code above we are actually proving a **string** as the value to the **style attribute**, which would work fine if it was **HTML**, but in **JavaScript** we need the value for the **style property** as a **JavaScript object** `{key: value}`. Whenever we want to inject some **JavaScript** into a **HTML element** in **JSX, we have to wrap it inside a set of **curly braces** `{}`.
+However, we inside a **JSX** file, and in the code above we are actually proving a **string** as the value to the **style attribute**, which would work fine if it was **HTML**, but in **JavaScript** we need the value for the **style property** as a **JavaScript object** `{key: value}`. Whenever we want to inject some **JavaScript** into a **HTML element** in **JSX, we have to wrap it inside a set of **curly braces\*\* `{}`.
 
 The code should look like the one below:
 
@@ -442,13 +442,13 @@ ReactDOM.render(
 
 :question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-styling-practice-forked-ywzrx?file=/src/index.js):
 
-- Create a React app from scratch.
-- Show a single h1 that says "Good morning" if between midnight and 12PM.
-- or "Good Afternoon" if between 12PM and 6PM.
-- or "Good evening" if between 6PM and midnight.
-- Apply the "heading" style in the styles.css
-- Dynamically change the color of the h1 using inline css styles.
-- Morning = red, Afternoon = green, Night = blue.
+-   Create a React app from scratch.
+-   Show a single h1 that says "Good morning" if between midnight and 12PM.
+-   or "Good Afternoon" if between 12PM and 6PM.
+-   or "Good evening" if between 6PM and midnight.
+-   Apply the "heading" style in the styles.css
+-   Dynamically change the color of the h1 using inline css styles.
+-   Morning = red, Afternoon = green, Night = blue.
 
 ```js
 import React from "react";
@@ -486,18 +486,18 @@ ReactDom.render(
 ```
 
 > :warning: **WARNING**</br></br>
->**[let Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)**</br></br>
->**Description**</br></br>
->**let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).</br></br>
->Just like `const` the `let` does not create properties of the `window` object when declared globally (in the top-most scope).
+> **[let Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)**</br></br>
+> **Description**</br></br>
+> **let** allows you to declare variables that are limited to the scope of a **block** statement, or expression on which it is used, unlike the `var` keyword, which declares a variable globally, or locally to an entire function regardless of block scope. The other difference between `var` and `let` is that the latter is initialized to a value only when a parser evaluates it (see below).</br></br>
+> Just like `const` the `let` does not create properties of the `window` object when declared globally (in the top-most scope).
 
-***
+* * *
 
 # React Components Lesson
 
 **React components** allows to break down a large website into individual compact and reusable **components**.
 
-**Components** allow us to split up a large file or a complex web structure into smaller components, and we also get the added benefit of **reusing** each of these ***components** when we need the same functionality.
+**Components** allow us to split up a large file or a complex web structure into smaller components, and we also get the added benefit of **reusing** each of these **\*components** when we need the same functionality.
 
 The code below is an example from a previous lesson, and we will split up the entire website into **smaller components**.
 
@@ -520,7 +520,7 @@ ReactDOM.render(
 
 Below is the code splitted up into **smaller components**.
 
-To split the **h1** into a separete component we create a `function`, e.g. `Heading()`, and it is **React** convention to give the **components** a name that is in **Pascal case** (every single word has the first letter **capitalized**),  and this allow **React** to differentiate between the **custom components** versus the **HTML elements** that we are trying to get hold of that exists in the **DOM. The **heading function** is going to return a **HTML element** that is created using **JavaScript**, below is an example:
+To split the **h1** into a separete component we create a `function`, e.g. `Heading()`, and it is **React** convention to give the **components** a name that is in **Pascal case** (every single word has the first letter **capitalized**),  and this allow **React** to differentiate between the **custom components** versus the **HTML elements** that we are trying to get hold of that exists in the **DOM. The **heading function** is going to return a **HTML element** that is created using **JavaScript\*\*, below is an example:
 
 ```js
 //Create a React component called Heading
@@ -533,8 +533,8 @@ function Heading() {
 Now the **custom heading component** can be used inside the **React code** as if it was a **HTML element**.
 
 > :warning: **WARNING**</br></br>
->By convention, if we have a **HTML element** that has no children (nothing between the opening and closing tags), then the best practice is to have a self closing tag `<Heading />`.</br></br>
->The [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) is generally accepted to be a good **reference** as to best practices on how to write or structure your code.
+> By convention, if we have a **HTML element** that has no children (nothing between the opening and closing tags), then the best practice is to have a self closing tag `<Heading />`.</br></br>
+> The [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react) is generally accepted to be a good **reference** as to best practices on how to write or structure your code.
 
 ```js
 import React from "react";
@@ -649,9 +649,9 @@ export default List;
 ## [React Components Final Code](https://codesandbox.io/s/react-components-forked-1mj7q?file=/src/components/App.jsx)
 
 > :warning: **WARNING**</br></br>
->Normally, you will notice that in a lot of **React apps**, they don't have any **HTML elements** inside the **index.js** file.</br></br>
->Instead **index.js** has pretty much no **custom code**, other than just a **custom component** called `App`, like the example below, and then in the **App.jsx** we have the start of the **component tree** and then we start seeing these **HTML elements** as well as **custom components**.</br></br>
->Another good practice is to create a folder called **components** inside the **src** folder and move all the **components** over there.
+> Normally, you will notice that in a lot of **React apps**, they don't have any **HTML elements** inside the **index.js** file.</br></br>
+> Instead **index.js** has pretty much no **custom code**, other than just a **custom component** called `App`, like the example below, and then in the **App.jsx** we have the start of the **component tree** and then we start seeing these **HTML elements** as well as **custom components**.</br></br>
+> Another good practice is to create a folder called **components** inside the **src** folder and move all the **components** over there.
 
 **index.js**
 
@@ -886,11 +886,11 @@ we want to use it as a component (inside a HTML tag...)
 export default App;
 ```
 
-***
+* * *
 
 # JavaScript ES6 - Import, Export and Modules Lesson
 
-**Import, export** and the concept of **modules** allow us to be able to start aplitting up large **JavaScript** files into individual more manageable **components**. And this is what **React components** are leveraging from**.
+**Import, export** and the concept of **modules** allow us to be able to start aplitting up large **JavaScript** files into individual more manageable **components**. And this is what **React components** are leveraging from\*\*.
 
 Once we export a file e.g. `math.js` then it becomes a new **module** and we can export whatever it is that we want to be used elsewhere from this file.
 
@@ -968,9 +968,9 @@ export default pi;
 export { doublePi, triplePi };
 ```
 
-## Asterisk(*) Wildcard
+## Asterisk(\*) Wildcard
 
-`doublePi` and `triplePi` are `functions` so in order to get the value or the return of it, we have to add the **parentheses** `()` to activate it, `<li>{doublePi()}</li><li>{triplePi()}</li>`. However, If we don't want to separate out the difference between the **default** and the **exports**, then we can use the **wildcard** `*`, the asterisk sign basically says ***import everything*** but we have to give it a name so we can use it in the file, e.g. `myPI`. See example below `index.js`:</br>
+`doublePi` and `triplePi` are `functions` so in order to get the value or the return of it, we have to add the **parentheses** `()` to activate it, `<li>{doublePi()}</li><li>{triplePi()}</li>`. However, If we don't want to separate out the difference between the **default** and the **exports**, then we can use the **wildcard** `*`, the asterisk sign basically says **_import everything_** but we have to give it a name so we can use it in the file, e.g. `myPI`. See example below `index.js`:</br>
 
 ```js
 import React from "react";
@@ -995,7 +995,7 @@ ReactDOM.render(
 ```
 
 > :warning: **WARNING**</br></br>
->Note the `math.js` file does not require any changes to use the asterisk wildcard. However, if we use a wildcard ten we will lose the benefit of having a **single default export**. Using the **single default export** and incorporating specific functions makes the code more clear and it means that we are only importing the things that we actually need. This the reason why the wildcard import is discouraged in many style guides.</br>
+> Note the `math.js` file does not require any changes to use the asterisk wildcard. However, if we use a wildcard ten we will lose the benefit of having a **single default export**. Using the **single default export** and incorporating specific functions makes the code more clear and it means that we are only importing the things that we actually need. This the reason why the wildcard import is discouraged in many style guides.</br>
 
 ## JavaScript ES6 - Import, Export and Modules [Code Challenge](https://codesandbox.io/s/es6-importexport-practice-forked-2e0hu?file=/src/index.js:0-469)
 
@@ -1090,13 +1090,13 @@ export default add;
 export { multiply, subtract, divide };
 ```
 
-***
+* * *
 
 # React Properties (Props) Lesson
 
 **[Props](https://www.w3schools.com/react/react_props.asp)** are arguments passed into **React components**, they are passed to components via **HTML attributes**. **React Props** are like **function arguments in JavaScript** and **attributes in HTML**. To send props into a **component**, use the same syntax as **HTML attributes**.
 
-As we can see on the code below, it is very repetitive and very long to create this page as per this code, and this is a perfect use case for **React components** because of these repetitive **elements** 
+As we can see on the code below, it is very repetitive and very long to create this page as per this code, and this is a perfect use case for **React components** because of these repetitive **elements**
 
 ```js
 import React from "react";
@@ -1132,7 +1132,7 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-``` 
+```
 
 We can pass properties (props) to our **custom React components** using very similar syntax to what we have in **HTML**. Example is `<Card name="Beyonce"/>`, when this `Card` **component** gets created, it will have a **property** called `name` that is set to **Beyonce**, and we can get a hold of it by adding a name to the **input** to access these things that are sent over, and it is normal to call it **props**
 
@@ -1211,11 +1211,10 @@ ReactDOM.render(
 
 :question: The challenge below has been completed on [CodeSandbox](https://codesandbox.io/s/react-props-practice-forked-mgt5p?file=/src/index.js:158-509).
 
-- Apply CSS styles to App.jsx component to match the appearance on the completed [app](https://c6fkx.csb.app/):
-- Extract the contact card as a reusable Card component.
-- Use props to render the default Beyonce contact card so the Card component can be reused for other contacts.
-- Import the contacts.js file to create card components.
-
+-   Apply CSS styles to App.jsx component to match the appearance on the completed [app](https://c6fkx.csb.app/):
+-   Extract the contact card as a reusable Card component.
+-   Use props to render the default Beyonce contact card so the Card component can be reused for other contacts.
+-   Import the contacts.js file to create card components.
 
 **index.js**
 
@@ -1294,7 +1293,6 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
-
 ```
 
 **Cards.jsx**
@@ -1397,7 +1395,7 @@ export default App;
 
 In this lesson we are going to separate out a **React app** into even smaller **components** which are more specialized. And use **React developer tools** to help **debug** and **manage** all of these components. We are going to use the [code](https://codesandbox.io/s/react-devtools-dk9gj?fontsize=14&file=/src/index.js) from the previous challenge for it.
 
-Inside the **Card**jsx component** (code below) there are things which might work better as a **single component** because in the future we might want to **reuse it**.
+Inside the **Card.jsx component** (**_code below_**) there are things which might work better as a **single component** because in the future we might want to **reuse it**.
 
 ```js
 import React from "react";
@@ -1420,7 +1418,7 @@ function Card(props) {
 export default Card;
 ```
 
-## [Final Code](https://codesandbox.io/s/react-devtools-forked-wlc0k?file=/src/components/Detail.jsx:0-131) with More **Components**:
+## [Final Code](https://codesandbox.io/s/react-devtools-forked-wlc0k?file=/src/components/Detail.jsx:0-131) with More **Components**
 
 **Avatar.jsx**
 
@@ -1511,38 +1509,181 @@ function Card(props) {
 export default Card;
 ```
 
+# Mapping Data to Components Lesson
 
+**Mapping components** technique makes it easier to map all the **individual custom pieces of data** e.g. `name={contacts[0].name}` to each of these **custom components** e.g. `<Card />` (from code below **App.jsx**), then we will not need to keep creating `<Card />` **component** after `<Card />` **component**, and it can be crate **dynamically**.
 
+```js
+<Card
+  name={contacts[0].name}
+  img={contacts[0].imgURL}
+  tel={contacts[0].phone}
+  email={contacts[0].email}
+/>
+<Card
+  name={contacts[1].name}
+  img={contacts[1].imgURL}
+  tel={contacts[1].phone}
+  email={contacts[1].email}
+/>
+<Card
+  name={contacts[2].name}
+  img={contacts[2].imgURL}
+  tel={contacts[2].phone}
+  email={contacts[2].email}
+/>
+```
 
+The **map function** is a JavaScript function that is useful for handling **arrays** such as the **contacts array (`contacts.js`)**. What the map function (`{contacts.map(createCard)}`) does is it **loops** through the `contacts` **array** and for every single **item** that exists in the **array**, it calls the `function createCard(contact)` **function** and it passes over each of the **objects** inside the **array**.
 
+**App.jsx**
 
+```js
+import React from "react";
+import Card from "./Card";
+import contacts from "../contacts";
 
+//Function to crate a new card component
+function createCard(contact){
+  return <Card name={contact.name}
+  img={contact.imgURL}
+  tel={contact.phone}
+  email={contact.email}
+   />;
+}
 
+function App() {
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
 
+      {/*
+      Tap into the contacts array (contacts.js) and then
+      we will call the map function, inside the map() it expects
+      an actual function (we are calling a function and then passing it a function)
+      and this is kind of the fundamentals of functional programming where instead of
+      passing values around the code, we pass functions into functions instead, and there
+      can be many levels of functions into functions...
+      */}
+      {contacts.map(createCard)}
+    </div>
+  );
+}
 
+export default App;
+```
 
+**contacts.js**
 
+```js
+const contacts = [
+  {
+    id: 1,
+    name: "Beyonce",
+    imgURL:
+      "https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+    phone: "+123 456 789",
+    email: "b@beyonce.com"
+  },
+  {
+    id: 2,
+    name: "Jack Bauer",
+    imgURL:
+      "https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+    phone: "+987 654 321",
+    email: "jack@nowhere.com"
+  },
+  {
+    id: 3,
+    name: "Chuck Norris",
+    imgURL:
+      "https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png",
+    phone: "+918 372 574",
+    email: "gmail@chucknorris.com"
+  }
+];
 
+export default contacts;
+```
 
+> :warning: **WARNING**</br></br>
+> We get the below error message when we use the Rect DevTools</br>
+> Warning: Each child in a list should have a unique "key" prop.<br/></br>
+>
+> * * *
+>
+> As **React** is able to crate a **Virtual DOM** that represents the current appearance of the website, and in order for it to be able to efficiently render components. For every single component that is being rendered using a loop such as the map function, we will have to give those components a property that has to be called `key`, and this property has to be something that is unique amongst each of these card components, that is being created using the loop, in this case we can use the `id` property inside the `contacts.js` file as it is unique to each of the contacts.&lt;/br</br>
+> The `key` property for each React component is a special property, and it is used to ensure the right order of items goes into the tree, it is used so it can render these components efficiently when they are being created from a loop, but it is not something we can tap into. If we want to show that `id` that comes from `contacts.js` then we need to create a custom prop e.g. (`id={contact.id}`)
+> See below the final code:
 
+**App.jsx**
 
+```js
+import React from "react";
+import Card from "./Card";
+import contacts from "../contacts";
 
+//Function to crate a new card component
+function createCard(contact){
+  return (
+    <Card
+      id={contact.id}
+      key={contact.id}
+      name={contact.name}
+      img={contact.imgURL}
+      tel={contact.phone}
+      email={contact.email}
+   />
+  );
+}
 
-***
+function App() {
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
+
+      {/*
+      Tap into the contacts array (contacts.js) and then
+      we will call the map function, inside the map() it expects
+      an actual function (we are calling a function and then passing it a function)
+      and this is kind of the fundamentals of functional programming where instead of
+      passing values around the code, we pass functions into functions instead, and there
+      can be many levels of functions into functions...
+      */}
+      {contacts.map(createCard)}
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Card.jsx**
+
+```js
+import React from "react";
+import Avatar from "./Avatar";
+import Detail from "./Detail";
+
+function Card(props) {
+  return (
+    <div className="card">
+      <div className="top">
+     <p>{props.id}</p>
+        <h2 className="name">{props.name}</h2>
+        <Avatar img={props.img} />
+      </div>
+      <div className="bottom">
+        <Detail detailInfo={props.tel} />
+        <Detail detailInfo={props.email} />
+      </div>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+* * *
 
 # List of Projects Created in the React.js Module
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
