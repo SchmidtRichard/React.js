@@ -1,27 +1,27 @@
-import React from "react";
-import Card from "./Card";
-import contacts from "../contacts";
+import React from 'react';
+import Card from './Card';
+import contacts from '../contacts';
 
 //Function to crate a new card component
-function createCard(contact){
-  return (
-    <Card 
-      id={contact.id}
-      key={contact.id}
-      name={contact.name}
-      img={contact.imgURL}
-      tel={contact.phone}
-      email={contact.email}
-   />
-  );
+function createCard(contact) {
+	return (
+		<Card
+			id={contact.id}
+			key={contact.id}
+			name={contact.name}
+			img={contact.imgURL}
+			tel={contact.phone}
+			email={contact.email}
+		/>
+	);
 }
 
 function App() {
-  return (
-    <div>
-      <h1 className="heading">My Contacts</h1>
+	return (
+		<div>
+			<h1 className="heading">My Contacts</h1>
 
-      {/*
+			{/*
       Tap into the contacts array (contacts.js) and then
       we will call the map function, inside the map() it expects
       an actual function (we are calling a function and then passing it a function)
@@ -29,13 +29,9 @@ function App() {
       passing values around the code, we pass functions into functions instead, and there
       can be many levels of functions into functions...
       */}
-      {contacts.map(createCard)}
+			{contacts.map(createCard)}
 
-
-
-
-
-      {/* <Card
+			{/* <Card
         name={contacts[0].name}
         img={contacts[0].imgURL}
         tel={contacts[0].phone}
@@ -53,8 +49,8 @@ function App() {
         tel={contacts[2].phone}
         email={contacts[2].email}
       /> */}
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;

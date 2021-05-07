@@ -1609,12 +1609,12 @@ export default contacts;
 
 > :warning: **WARNING**</br></br>
 > We get the below error message when we use the Rect DevTools</br></br>
-> Warning: Each child in a list should have a unique "key" prop.<br/></br>
+> Warning: Each child in a list should have a unique "key" prop.<br/>
 >
 > * * *
 >
 > As **React** is able to crate a **Virtual DOM** that represents the current appearance of the website, and in order for it to be able to efficiently render components. For every single component that is being rendered using a loop such as the map function, we will have to give those components a property that has to be called `key`, and this property has to be something that is unique amongst each of these card components, that is being created using the loop, in this case we can use the `id` property inside the `contacts.js` file as it is unique to each of the contacts. </br></br>
-> The `key` property for each React component is a special property, and it is used to ensure the right order of items goes into the tree, it is used so it can render these components efficiently when they are being created from a loop, but it is not something we can tap into. If we want to show that `id` that comes from `contacts.js` then we need to create a custom prop e.g. (`id={contact.id}`)</br>
+> The `key` property for each React component is a special property, and it is used to ensure the right order of items goes into the tree, it is used so it can render these components efficiently when they are being created from a loop, but it is not something we can tap into. If we want to show that `id` that comes from `contacts.js` then we need to create a custom prop e.g. (`id={contact.id}`)</br></br>
 > See below the final code:
 
 **App.jsx**
