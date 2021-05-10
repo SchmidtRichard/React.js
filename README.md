@@ -32,7 +32,7 @@
 10. [React DevTools Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-devtools-lesson)</br>
     10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 11. [Mapping Data to Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-lesson)</br>
-    1.1 [Mapping Data to Components Challenge](<>)</br>
+    11.1 [Mapping Data to Components Challenge](<>)</br>
 
 * * *
 
@@ -1513,7 +1513,7 @@ export default Card;
 
 # Mapping Data to Components Lesson
 
-**Mapping components** technique makes it easier to map all the **individual custom pieces of data** e.g. `name={contacts[0].name}` to each of these **custom components** e.g. `<Card />` (from code below **App.jsx**), then we will not need to keep creating `<Card />` **component** after `<Card />` **component**, and it can be crate **dynamically**.
+**Mapping components** technique makes it easier to map all the **individual custom pieces of data** e.g. `name={contacts[0].name}` to each of these **custom components** e.g. `<Card />` (from code below **App.jsx**), then we will not need to keep creating `<Card />` **component** after `<Card />` **component**, and it can be created **dynamically**.
 
 ```js
 <Card
@@ -1545,7 +1545,7 @@ import React from "react";
 import Card from "./Card";
 import contacts from "../contacts";
 
-//Function to crate a new card component
+//Function to create a new card component
 function createCard(contact){
   return <Card name={contact.name}
   img={contact.imgURL}
@@ -1614,7 +1614,7 @@ export default contacts;
 >
 > * * *
 >
-> As **React** is able to crate a **Virtual DOM** that represents the current appearance of the website, and in order for it to be able to efficiently render components. For every single component that is being rendered using a loop such as the map function, we will have to give those components a property that has to be called `key`, and this property has to be something that is unique amongst each of these card components, that is being created using the loop, in this case we can use the `id` property inside the `contacts.js` file as it is unique to each of the contacts. </br></br>
+> As **React** is able to create a **Virtual DOM** that represents the current appearance of the website, and in order for it to be able to efficiently render components. For every single component that is being rendered using a loop such as the map function, we will have to give those components a property that has to be called `key`, and this property has to be something that is unique amongst each of these card components, that is being created using the loop, in this case we can use the `id` property inside the `contacts.js` file as it is unique to each of the contacts. </br></br>
 > The `key` property for each React component is a special property, and it is used to ensure the right order of items goes into the tree, it is used so it can render these components efficiently when they are being created from a loop, but it is not something we can tap into. If we want to show that `id` that comes from `contacts.js` then we need to create a custom prop e.g. (`id={contact.id}`)</br></br>
 > See below the final code:
 
@@ -1625,7 +1625,7 @@ import React from "react";
 import Card from "./Card";
 import contacts from "../contacts";
 
-//Function to crate a new card component
+//Function to create a new card component
 function createCard(contact){
   return (
     <Card
@@ -1684,6 +1684,211 @@ function Card(props) {
 }
 
 export default Card;
+```
+
+## Mapping Data to Components Challenge
+
+:question: The code below is the starting code for the challenge:
+
+**App.jsx**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div>
+      <h1>
+        <span>emojipedia</span>
+      </h1>
+
+      <dl className="dictionary">
+        <div className="term">
+          <dt>
+            <span className="emoji" role="img" aria-label="Tense Biceps">
+              💪
+            </span>
+            <span>Tense Biceps</span>
+          </dt>
+          <dd>
+            “You can do that!” or “I feel strong!” Arm with tense biceps. Also
+            used in connection with doing sports, e.g. at the gym.
+          </dd>
+        </div>
+        <div className="term">
+          <dt>
+            <span className="emoji" role="img" aria-label="Tense Biceps">
+              🙏
+            </span>
+            <span>Person With Folded Hands</span>
+          </dt>
+          <dd>
+            Two hands pressed together. Is currently very introverted, saying a
+            prayer, or hoping for enlightenment. Is also used as a “high five”
+            or to say thank you.
+          </dd>
+        </div>
+        <div className="term">
+          <dt>
+            <span className="emoji" role="img" aria-label="Tense Biceps">
+              🤣
+            </span>
+            <span>Rolling On The Floor, Laughing</span>
+          </dt>
+          <dd>
+            This is funny! A smiley face, rolling on the floor, laughing. The
+            face is laughing boundlessly. The emoji version of “rofl“. Stands
+            for „rolling on the floor, laughing“.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**emojipedia.js**
+
+```js
+const emojipedia = [
+  {
+    id: 1,
+    emoji: "💪",
+    name: "Tense Biceps",
+    meaning:
+      "“You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
+  },
+  {
+    id: 2,
+    emoji: "🙏",
+    name: "Person With Folded Hands",
+    meaning:
+      "Two hands pressed together. Is currently very introverted, saying a prayer, or hoping for enlightenment. Is also used as a “high five” or to say thank you."
+  },
+  {
+    id: 3,
+    emoji: "🤣",
+    name: "Rolling On The Floor, Laughing",
+    meaning:
+      "This is funny! A smiley face, rolling on the floor, laughing. The face is laughing boundlessly. The emoji version of “rofl“. Stands for „rolling on the floor, laughing“."
+  }
+];
+```
+
+Challenge Tasks:
+
+1 - Create Entry Components
+2 - Create props to replace hardcoded data
+3.1 - Import the emojipedia const
+3.2 - Map through the emojipedia array and render Entry components
+
+:heavy_check_mark: **Solution**
+
+**App.jsx**
+
+```js
+import React from "react";
+import Entry from "./Entry.jsx";
+import emojipedia from "../emojipedia.js";
+
+//Check if we now got access to the emojipedia array (this is just a test)
+console.log(emojipedia);
+
+//Function to create a new emoji component
+function createEntry(emojiTerm) {
+	return (
+		<Entry key={emojiTerm.id} emojiCharacter={emojiTerm.emoji} name={emojiTerm.name} meaning={emojiTerm.meaning} />
+	);
+}
+
+function App() {
+	return (
+		<div>
+			<h1>
+				<span>emojipedia</span>
+			</h1>
+
+			<dl className="dictionary">{emojipedia.map(createEntry)}</dl>
+		</div>
+	);
+}
+
+export default App;
+```
+
+**emojipedia.js**
+
+```js
+const emojipedia = [
+	{
+		id: 1,
+		emoji: "💪",
+		name: "Tense Biceps",
+		meaning:
+			"“You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
+	},
+	{
+		id: 2,
+		emoji: "🙏",
+		name: "Person With Folded Hands",
+		meaning:
+			"Two hands pressed together. Is currently very introverted, saying a prayer, or hoping for enlightenment. Is also used as a “high five” or to say thank you."
+	},
+	{
+		id: 3,
+		emoji: "🤣",
+		name: "Rolling On The Floor, Laughing",
+		meaning:
+			"This is funny! A smiley face, rolling on the floor, laughing. The face is laughing boundlessly. The emoji version of “rofl“. Stands for „rolling on the floor, laughing“."
+	},
+	{
+		id: 4,
+		emoji: "😚",
+		name: "Kissing Face With Closed Eyes",
+		meaning:
+			"Cute face with closed eyes and rosy cheeks. As a thank you for a tip or a favor. Loving kiss to the closest friends, family or darling."
+	},
+	{
+		id: 5,
+		emoji: "🤬",
+		name: "Face With Symbols Over The Mouth",
+		meaning:
+			"The symbols over the mouth represent cursing. The serious-looking smiley is really upset and keeps using four-letter words. Represents a sudden outburst of fury or frustration"
+	},
+	{
+		id: 6,
+		emoji: "🐼",
+		name: "Panda",
+		meaning:
+			"I'm going to a Cro concert! Pandas come from China, feed on bamboo and are threatened with extinction. You find something totally cute or as an expression of affection within friendships."
+	}
+];
+
+export default emojipedia;
+```
+
+**Entry.jsx**
+
+```js
+import React from "react";
+
+function Entry(props) {
+	return (
+		<div className="term">
+			<dt>
+				<span className="emoji" role="img" aria-label="Tense Biceps">
+					{props.emojiCharacter}
+				</span>
+				<span>{props.name}</span>
+			</dt>
+			<dd>{props.meaning}</dd>
+		</div>
+	);
+}
+
+export default Entry;
 ```
 
 * * *
