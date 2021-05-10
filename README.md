@@ -32,6 +32,7 @@
 10. [React DevTools Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-devtools-lesson)</br>
     10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 11. [Mapping Data to Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-lesson)</br>
+    1.1 [Mapping Data to Components Challenge](<>)</br>
 
 * * *
 
