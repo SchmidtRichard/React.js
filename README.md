@@ -32,7 +32,7 @@
 10. [React DevTools Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#react-devtools-lesson)</br>
     10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 11. [Mapping Data to Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-lesson)</br>
-    11.1 [Mapping Data to Components Challenge](<>)</br>
+    11.1 [Mapping Data to Components Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-challenge)</br>
 
 * * *
 
@@ -1779,10 +1779,10 @@ const emojipedia = [
 
 Challenge Tasks:
 
-1 - Create Entry Components
-2 - Create props to replace hardcoded data
-3.1 - Import the emojipedia const
-3.2 - Map through the emojipedia array and render Entry components
+-   Create Entry Components
+-   Create props to replace hardcoded data
+-   Import the emojipedia const
+    -   Map through the emojipedia array and render Entry components
 
 :heavy_check_mark: **Solution**
 
@@ -1799,7 +1799,12 @@ console.log(emojipedia);
 //Function to create a new emoji component
 function createEntry(emojiTerm) {
 	return (
-		<Entry key={emojiTerm.id} emojiCharacter={emojiTerm.emoji} name={emojiTerm.name} meaning={emojiTerm.meaning} />
+		<Entry
+      key={emojiTerm.id}
+      emojiCharacter={emojiTerm.emoji}
+      name={emojiTerm.name}
+      meaning={emojiTerm.meaning}
+    />
 	);
 }
 
