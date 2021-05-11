@@ -1896,6 +1896,226 @@ function Entry(props) {
 export default Entry;
 ```
 
+# JavaScript ES6 Map/Filter/Reduce Lesson
+
+## [Map Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+We will look into map in greater detail and also look at some of the related **functions** that help deal with **arrays** such as **map**, **filter**, **reduce**, **find**, and **find index**.
+
+**Map** allows us to loop through the **array** and **create a new array** by doing something with each item in the **array**. We call it by getting hold of an **array** in order to call **map** on it, and inside the **map function** there is going to be another **function (we are passing a `function` into another `function`)**, and the **function** we pass in will determine what we actually want to do with each item.
+
+Let's use as an exempre (below) we want to **double** each of the items in the **array** `numbers`. We create a **function** that takes an input `x` and simply just **return** the value of `x` multiplied by `2`. If we pass the `double function` into the `map function`, then it is going to loop through the `numbers` **array** and for each of the `numbers` in the array it is going to put it as the `input` of the **function** and **output** a `new array` with each item replaced with double the size of the previous one.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+function double(x) {
+	return x * 2;
+}
+
+const newNumbers = numbers.map(double);
+
+console.log("Original Array: " + numbers);
+console.log("New Array with Numbers Doubled - Map Function: " + newNumbers);
+```
+
+The code above could also be written as below:
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map(function(x) {
+	return x * 2;
+});
+
+console.log("Original Array: " + numbers);
+console.log("New Array with Numbers Doubled - Map Function: " + newNumbers);
+```
+
+Using **map** is very handy in **React** when we are creating **custom components** and **mapping data** to it.
+
+## [Filter Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
+Another related and also quite useful **function** is `filter`. What **filter** does is, it creates a new **array** by keeping only the items that return `true`. The `filter` **function** looks through each of the numbers inside the **numbers array** and for each of these numbers, it is going to return only the ones that meet a particular **criteria**, in the example below we are checking for numbers greater than 10, and if they are then we are going to **add** it to a new **array** which is going to be the output of this functions.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.filter(function(num) {
+	return num > 10;
+});
+
+console.log("Original Array: " + numbers);
+console.log("New Array with Numbers Doubled - Filter Function: " + newNumbers);
+```
+
+This is basically a way of adding a **filter** to the **array** and providing a condition that we want to check for, and if that condition is met then create a new `array (newNumbers)` with those items that actually return `true`.
+
+We could do the above with a `forEach` loop instead of the filter, however, it takes more effort (code below) instead of simply using the `filter function`.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+var newNumbers = [];
+numbers.forEach(function(num) {
+	if (num > 10) {
+		newNumbers.push(num);
+	}
+});
+
+console.log("Original Array: " + numbers);
+console.log("New Array with Numbers Doubled - forEach Loop Instead of Filter Function: " + newNumbers);
+```
+
+## [Reduce Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
+The **reduce function** works by **accumulating** a value and doing something to each of the items in an **array**. As an example let's say we want to **add** and **sum up** all of the items in the `numbers` **array**, see example below:
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+var newNumber = numbers.reduce(function(accumulator, currentNumber) {
+	/*
+    Console log the accumulator and current number every time the loop is
+    run in order to understand how the reduce function works
+  */
+	console.log("accumulator: " + accumulator);
+	console.log("currentNumber: " + currentNumber);
+
+	return accumulator + currentNumber;
+});
+
+console.log("Original Array: " + numbers);
+console.log("New Array with the Numbers Added Up - Reduce Function: " + newNumber);
+```
+
+We could do the above with a `forEach` loop instead of the reduce, however, it takes more effort (code below) instead of simply using the `reduce function`.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+var newNumber = 0;
+numbers.forEach(function(currentNumber) {
+	newNumber += currentNumber;
+});
+
+console.log("New Array with the Numbers Added Up - forEach Loop Instead of Reduce Function: " + newNumber);
+```
+
+## [Find Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+The **Find function** helps to find the **first item** that matches in an **array**.
+
+In the example below, the `find function` will look for the first value that is greater than 10, however, it will **not** loop through the whole array `var numbers = [ 3, 56, 2, 48, 5 ];`, it will stop as soon as it finds the first number that is greater than 10, which is **56**.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.find(function(num) {
+
+	return num > 10;
+});
+
+console.log("Find Function: " + newNumber);
+```
+
+## [FindIndex Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findindex)
+
+The **FindIndex function** works on a similar way to the **Find Function**, but instead of finding the first item what it does is it **finds the index of the first item** that matches.
+
+In the example below, the `findIndex function` will look for the first value that is greater than 10, however, it will **not** loop through the whole array `var numbers = [ 3, 56, 2, 48, 5 ];`, it will stop as soon as if finds the first number that is greater than 10 and return its **index**, which is **1**.
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.findIndex(function(num) {
+	return num > 10;
+});
+
+console.log("FindIndex Function: " + newNumber);
+```
+
+## [substring Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+
+The `substring()` method returns the part of the `string` between the start and end indexes, or to the end of the string.
+
+In the example below, the `substring method` is used with the `map function` to get hold of the `meaning` part of the **array** and return only the first **100** characters' `meaning`.
+
+**index.js**
+
+```js
+import emojipedia from "./emojipedia.js";
+
+const newEmojipedia = emojipedia.map(function(emojiEntry) {
+	return emojiEntry.meaning.substring(0, 100);
+});
+
+//The emojipedia const is an array
+console.log(emojipedia);
+
+console.log("substring:\n" + newEmojipedia);
+```
+
+**emojipedia.js**
+
+```js
+const emojipedia = [
+  {
+    id: 1,
+    emoji: "💪",
+    name: "Tense Biceps",
+    meaning:
+      "“You can do that!” or “I feel strong!” Arm with tense biceps. Also used in connection with doing sports, e.g. at the gym."
+  },
+  {
+    id: 2,
+    emoji: "🙏",
+    name: "Person With Folded Hands",
+    meaning:
+      "Two hands pressed together. Is currently very introverted, saying a prayer, or hoping for enlightenment. Is also used as a “high five” or to say thank you."
+  },
+  {
+    id: 3,
+    emoji: "🤣",
+    name: "Rolling On The Floor, Laughing",
+    meaning:
+      "This is funny! A smiley face, rolling on the floor, laughing. The face is laughing boundlessly. The emoji version of “rofl“. Stands for „rolling on the floor, laughing“."
+  }
+];
+
+export default emojipedia;
+```
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
+* * *
+
 * * *
 
 # List of Projects Created in the React.js Module
