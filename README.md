@@ -33,6 +33,14 @@
     10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 11. [Mapping Data to Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-lesson)</br>
     11.1 [Mapping Data to Components Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-challenge)</br>
+12. [JavaScript ES6 Map/Filter/Reduce/Find/FindIndex/Substring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-mapfilterreduce-lesson)</br>
+    12.1 [Map Function](https://github.com/SchmidtRichard/React.js#map-function)</br>
+    12.2 [Filter Function](https://github.com/SchmidtRichard/React.js#filter-function)</br>
+    12.3 [Reduce Function](https://github.com/SchmidtRichard/React.js#reduce-function)</br>
+    12.4 [Find Function](https://github.com/SchmidtRichard/React.js#find-function)</br>
+    12.5 [FindIndex Function](https://github.com/SchmidtRichard/React.js#findindex-function)</br>
+    12.6 [substring Method](https://github.com/SchmidtRichard/React.js#substring-method)</br>
+13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](<>)</br>
 
 * * *
 
@@ -1896,7 +1904,9 @@ function Entry(props) {
 export default Entry;
 ```
 
-# JavaScript ES6 Map/Filter/Reduce Lesson
+* * *
+
+# JavaScript ES6 Map/Filter/Reduce/Find/FindIndex/Substring Lesson
 
 ## [Map Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
@@ -2088,6 +2098,260 @@ export default emojipedia;
 
 * * *
 
+# JavaScript ES6 Arrow Functions (Fat Arrow) Lesson
+
+**Arrow functions** are essentially a shorter way of writing a **JavaScript function**.
+
+One of the ways of writting **JavaScript** functions are like the example belows:
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+function square(x) {
+	return x * x;
+}
+```
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map(function square(x) {
+	return x * x;
+});
+```
+
+Using `arrow functions` we can short the examples above like the one below:
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map((x) => {
+	return x * x;
+});
+```
+
+And if we only have a single line statement (return) where we are only returning a single expression, then we can short the function even further, like the example below:
+
+```js
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map((x) => x * x);
+
+console.log(newNumbers);
+```
+
+Other examples where we take the code from the previous lesson [(JavaScript ES6 Map/Filter/Reduce/Find/FindIndex/Substring Lesson)](https://github.com/SchmidtRichard/React.js#javascript-es6-mapfilterreduce-lesson) and convert the functions to **arrow functions**:
+
+**App.jsx**
+
+```js
+import React from "react";
+import Entry from "./Entry";
+import emojipedia from "../emojipedia";
+
+function createEntry(emojiTerm) {
+	return <Entry key={emojiTerm.id} emoji={emojiTerm.emoji} name={emojiTerm.name} description={emojiTerm.meaning} />;
+}
+
+function App() {
+	return (
+		<div>
+			<h1>
+				<span>emojipedia</span>
+			</h1>
+			<dl className="dictionary">{emojipedia.map(createEntry)}</dl>
+		</div>
+	);
+}
+```
+
+**App.jsx** with **arrow function**
+
+```js
+import React from "react";
+import Entry from "./Entry";
+import emojipedia from "../emojipedia";
+
+function App() {
+	return (
+		<div>
+			<h1>
+				<span>emojipedia</span>
+			</h1>
+			<dl className="dictionary">
+				{emojipedia.map((emojiTerm) => (
+					<Entry
+						key={emojiTerm.id}
+						emoji={emojiTerm.emoji}
+						name={emojiTerm.name}
+						description={emojiTerm.meaning}
+					/>
+				))}
+			</dl>
+		</div>
+	);
+}
+
+export default App;
+```
+
+**index.js** `Map`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map(function(x) {
+	return x * 2;
+});
+```
+
+**index.js** `Map` with **arrow function**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.map((x) => x * 2);
+console.log(newNumbers);
+```
+
+**index.js** `Filter`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.filter(function(num) {
+  return num < 10;
+});
+```
+
+**index.js** `Filter` with **arrow function**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumbers = numbers.filter((num) => num < 10);
+console.log(newNumbers);
+```
+
+**index.js** `Reduce`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+var newNumber = numbers.reduce(function (accumulator, currentNumber) {
+    return accumulator + currentNumber;
+})
+```
+
+**index.js** `Reduce` with **arrow function**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.reduce((accumulator, currentNumber) => accumulator + currentNumber);
+console.log(newNumber);
+```
+
+**index.js** `Find`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.find(function (num) {
+  return num > 10;
+})
+```
+
+**index.js** `Find` with **arrow function**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.find((num) => num > 10);
+console.log(newNumber);
+```
+
+**index.js** `FindIndex`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.findIndex(function (num) {
+  return num > 10;
+})
+```
+
+**index.js** `FindIndex` with **arrow function**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+var numbers = [ 3, 56, 2, 48, 5 ];
+
+const newNumber = numbers.findIndex((num) => num > 10);
+console.log(newNumber);
+```
+
+* * *
+
 * * *
 
 * * *
@@ -2119,3 +2383,7 @@ export default emojipedia;
 * * *
 
 # List of Projects Created in the React.js Module
+
+```
+
+```
