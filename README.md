@@ -41,6 +41,7 @@
     12.5 [FindIndex Function](https://github.com/SchmidtRichard/React.js#findindex-function)</br>
     12.6 [substring Method](https://github.com/SchmidtRichard/React.js#substring-method)</br>
 13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
+14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](<>)</br>
 
 * * *
 
@@ -2353,6 +2354,78 @@ var numbers = [ 3, 56, 2, 48, 5 ];
 
 const newNumber = numbers.findIndex((num) => num > 10);
 console.log(newNumber);
+```
+
+* * *
+
+# React Conditional Rendering with the Ternary Operator & AND Operator Lesson
+
+We will be using different techniques to show different **React components** depending on some sort of condition e.g. if the user is logged in or not, in other words, checking the value of a particular `property` and then **rendering** different **components** depending on the **value** of that `property`.
+
+We can convert the `if statement` into an `expression` using the **Ternary Operator (`CONDITION ? DO IF TRUE : DO IF FALSE` - each part inside the ternary operator is an expression e.g. condition, true, and false, therefore the whole thing is just an expression)**.
+
+**if statement**
+
+```js
+	if (isLoggedIn === true) {
+		return <h1>Hello</h1>;
+	} else {
+		return <Login />;
+	}
+```
+
+**App.jsx**
+
+```js
+import React from "react";
+import Login from "./Login.jsx";
+
+var isLoggedIn = false;
+
+// const currentTime = new Date(2021, 18, 5, 9).getHours();
+// console.log(currentTime);
+
+function App() {
+	return (
+		<div className="container">
+			//Check if the user is logged in isLoggedIn ? <h1>Hello</h1> : <Login />
+			{/* currentTime > 12 && <h1>Still working?</h1>} */}
+		</div>
+	);
+}
+
+export default App;
+```
+
+**Login.jsx**
+
+```js
+import React from "react";
+import Input from "./Input.jsx";
+
+function Login() {
+	return (
+		<form className="form">
+			<Input type="text" placeholder="Username" />
+			<Input type="password" placeholder="Password" />
+			<button type="submit">Login</button>
+		</form>
+	);
+}
+
+export default Login;
+```
+
+**Input.jsx**
+
+```js
+import React from "react";
+
+function Input(props) {
+	return <input type={props.type} placeholder={props.placeholder} />;
+}
+
+export default Input;
 ```
 
 * * *
