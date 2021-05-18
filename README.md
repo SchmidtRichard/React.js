@@ -33,14 +33,14 @@
     10.1 [Final Code with More Components](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#final-code-with-more-components)</br>
 11. [Mapping Data to Components Lesson](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-lesson)</br>
     11.1 [Mapping Data to Components Challenge](https://github.com/SchmidtRichard/Introduction-to-JSX-and-Babel#mapping-data-to-components-challenge)</br>
-12. [JavaScript ES6 Map/Filter/Reduce/Find/FindIndex/Substring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-mapfilterreduce-lesson)</br>
+12. [JavaScript ES6 Map/Filter/Reduce/Find/FindIndex/Substring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-mapfilterreducefindfindindexsubstring-lesson)</br>
     12.1 [Map Function](https://github.com/SchmidtRichard/React.js#map-function)</br>
     12.2 [Filter Function](https://github.com/SchmidtRichard/React.js#filter-function)</br>
     12.3 [Reduce Function](https://github.com/SchmidtRichard/React.js#reduce-function)</br>
     12.4 [Find Function](https://github.com/SchmidtRichard/React.js#find-function)</br>
     12.5 [FindIndex Function](https://github.com/SchmidtRichard/React.js#findindex-function)</br>
     12.6 [substring Method](https://github.com/SchmidtRichard/React.js#substring-method)</br>
-13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](<>)</br>
+13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
 
 * * *
 
@@ -2150,7 +2150,12 @@ import Entry from "./Entry";
 import emojipedia from "../emojipedia";
 
 function createEntry(emojiTerm) {
-	return <Entry key={emojiTerm.id} emoji={emojiTerm.emoji} name={emojiTerm.name} description={emojiTerm.meaning} />;
+	return <Entry
+    key={emojiTerm.id}
+    emoji={emojiTerm.emoji}
+    name={emojiTerm.name}
+    description={emojiTerm.meaning}
+  />;
 }
 
 function App() {
