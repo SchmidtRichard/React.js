@@ -42,7 +42,7 @@
     12.6 [substring Method](https://github.com/SchmidtRichard/React.js#substring-method)</br>
 13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
 14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-lesson)</br>
-    14.1 [React Conditional Rendering with the Ternary Operator & AND Operator Challenge](<>)</br>
+    14.1 [React Conditional Rendering with the Ternary Operator & AND Operator Challenge](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-challenge)</br>
 
 * * *
 
@@ -2457,7 +2457,7 @@ function App() {
 export default App;
 ```
 
-**Forms.jsx**
+**Form.jsx**
 
 ```js
 import React from "react";
@@ -2479,10 +2479,10 @@ export default Form;
 Challenge Tasks:
 
 -   Challenge: Without moving the `userIsRegistered` variable,
--   Show Login as the button text if userIsRegistered is true.
-    		\- Show Register as the button text if userIsRegistered is false.
--   Only show the Confirm Password input if userIsRegistered is false.
-    		\- Don't show it if userIsRegistered is true.
+-   Show Login as the button text if `userIsRegistered` is `true`.
+-   Show Register as the button text if `userIsRegistered` is `false`.
+-   Only show the Confirm Password input if `userIsRegistered` is `false`.
+-   Don't show it if `userIsRegistered` is `true`.
 
 :heavy_check_mark: **Solution**
 
