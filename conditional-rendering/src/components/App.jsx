@@ -10,8 +10,10 @@ var isLoggedIn = false;
 function App() {
 	return (
 		<div className="container">
-			//Check if the user is logged in isLoggedIn ? <h1>Hello</h1> : <Login />
-			{/* currentTime > 12 && <h1>Still working?</h1>} */}
+			{//Check if the user is logged in
+			isLoggedIn ? <h1>Hello</h1> : <Login />
+			//currentTime > 12 && <h1>Still working?</h1>
+			}
 		</div>
 	);
 }

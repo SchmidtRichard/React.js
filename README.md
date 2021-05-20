@@ -41,7 +41,8 @@
     12.5 [FindIndex Function](https://github.com/SchmidtRichard/React.js#findindex-function)</br>
     12.6 [substring Method](https://github.com/SchmidtRichard/React.js#substring-method)</br>
 13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
-14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](<>)</br>
+14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-lesson)</br>
+    14.1 [React Conditional Rendering with the Ternary Operator & AND Operator Challenge](<>)</br>
 
 * * *
 
@@ -1697,7 +1698,7 @@ export default Card;
 
 ## Mapping Data to Components Challenge
 
-:question: The code below is the starting code for the challenge:
+x
 
 **App.jsx**
 
@@ -2374,6 +2375,8 @@ We can convert the `if statement` into an `expression` using the **Ternary Opera
 	}
 ```
 
+Can be replaced with the **Ternary Operator** example below:
+
 **App.jsx**
 
 ```js
@@ -2383,13 +2386,16 @@ import Login from "./Login.jsx";
 var isLoggedIn = false;
 
 // const currentTime = new Date(2021, 18, 5, 9).getHours();
+
 // console.log(currentTime);
 
 function App() {
 	return (
 		<div className="container">
-			//Check if the user is logged in isLoggedIn ? <h1>Hello</h1> : <Login />
-			{/* currentTime > 12 && <h1>Still working?</h1>} */}
+			{//Check if the user is logged in
+			isLoggedIn ? <h1>Hello</h1> : <Login />
+			//currentTime > 12 && <h1>Still working?</h1>
+			}
 		</div>
 	);
 }
@@ -2426,6 +2432,96 @@ function Input(props) {
 }
 
 export default Input;
+```
+
+## React Conditional Rendering with the Ternary Operator & AND Operator Challenge
+
+:question: The code below is the starting code for the challenge:
+
+**App.jsx**
+
+```js
+import React from "react";
+import Form from "./Form";
+
+var userIsRegistered = false;
+
+function App() {
+  return (
+    <div className="container">
+      <Form />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Forms.jsx**
+
+```js
+import React from "react";
+
+function Form() {
+  return (
+    <form className="form">
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Confirm Password" />
+      <button type="submit">Register</button>
+    </form>
+  );
+}
+
+export default Form;
+```
+
+Challenge Tasks:
+
+-   Challenge: Without moving the `userIsRegistered` variable,
+-   Show Login as the button text if userIsRegistered is true.
+    		\- Show Register as the button text if userIsRegistered is false.
+-   Only show the Confirm Password input if userIsRegistered is false.
+    		\- Don't show it if userIsRegistered is true.
+
+:heavy_check_mark: **Solution**
+
+**App.jsx**
+
+```js
+import React from "react";
+import Form from "./Form";
+
+var userIsRegistered = false;
+
+function App() {
+	return (
+		<div className="container">
+			<Form isRegistered={userIsRegistered} />
+		</div>
+	);
+}
+
+export default App;
+```
+
+**Form.jsx**
+
+```js
+import React from "react";
+
+function Form(props) {
+	return (
+		<form className="form">
+			<input type="text" placeholder="Username" />
+			<input type="password" placeholder="Password" />
+			{props.isRegistered === false && <input type="password" placeholder="Confirm Password" />}
+			<button type="submit">{props.isRegistered ? "Login" : "Register"}</button>
+		</form>
+	);
+}
+
+export default Form;
 ```
 
 * * *
