@@ -48,6 +48,7 @@
     15.2 [Imperative Programming](https://github.com/SchmidtRichard/React.js#imperative-programming)</br>
 16. [React Hooks - useState Lesson](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-lesson)</br>
     16.1 [useState Function](https://github.com/SchmidtRichard/React.js#usestate-function)</br>
+    16.2 [React Hooks - useState Challenge](<>)</br>
 
 * * *
 
@@ -2680,24 +2681,140 @@ function App() {
 export default App;
 ```
 
-* * *
+## React Hooks - useState Challenge
 
-* * *
+:question: The code below is the starting code for the challenge:
 
-* * *
+**index.js**
 
-* * *
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
 
-* * *
+ReactDOM.render(<App />, document.getElementById("root"));
 
-* * *
-
-* * *
-
-* * *
-
-# List of Projects Created in the React.js Module
-
+let time = new Date().toLocaleTimeString();
+console.log(time);
 ```
 
+**App.jsx**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div className="container">
+      <h1>TIME</h1>
+      <button>Get Time</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Challenge Tasks:
+
+-   1.  Given that you can get the current time using:
+
+    -   let time = new Date().toLocaleTimeString();
+    -   console.log(time);
+
+    -   Show the latest time in the <h1> when the Get Time button is pressed.
+
+-   2.  Given that you can get code to be called every second
+
+    -   using the setInterval method.
+    -   Can you get the time in your <h1> to update every second?
+        e.g. uncomment the code below to see Hey printed every second.
+
+        -   function sayHi() {
+        -   console.log("Hey");
+        -   }
+        -   setInterval(sayHi, 1000);
+
+:heavy_check_mark: **Part 1 - Solution**
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	const now = new Date().toLocaleTimeString();
+
+	//Destructured array
+	const [ time, setTime ] = useState(now);
+
+	function updateTime() {
+		console.log("clicked");
+
+		const newTime = new Date().toLocaleTimeString();
+		setTime(newTime);
+	}
+
+	return (
+		<div className="container">
+			<h1>{time}</h1>
+			<button onClick={updateTime}>Get Time</button>
+		</div>
+	);
+}
+
+export default App;
+```
+
+:heavy_check_mark: **Part 2 - Solution**
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	setInterval(updateTime, 1000);
+
+	const now = new Date().toLocaleTimeString();
+
+	//Destructured array
+	const [ time, setTime ] = useState(now);
+
+	function updateTime() {
+		console.log("clicked");
+
+		const newTime = new Date().toLocaleTimeString();
+		setTime(newTime);
+	}
+
+	return (
+		<div className="container">
+			<h1>{time}</h1>
+			<button onClick={updateTime}>Get Time</button>
+		</div>
+	);
+}
+
+export default App;
 ```
