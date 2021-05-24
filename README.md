@@ -43,6 +43,9 @@
 13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
 14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-lesson)</br>
     14.1 [React Conditional Rendering with the Ternary Operator & AND Operator Challenge](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-challenge)</br>
+15. [State in React - Declarative vs Imperative Programming Lesson](<>)</br>
+    15.1 [Declarative Programming](<>)</br>
+    15.2 [Imperative Programming](<>)</br>
 
 * * *
 
@@ -2480,9 +2483,9 @@ Challenge Tasks:
 
 -   Challenge: Without moving the `userIsRegistered` variable,
 -   Show Login as the button text if `userIsRegistered` is `true`.
--   Show Register as the button text if `userIsRegistered` is `false`.
+    -   Show Register as the button text if `userIsRegistered` is `false`.
 -   Only show the Confirm Password input if `userIsRegistered` is `false`.
--   Don't show it if `userIsRegistered` is `true`.
+    -   Don't show it if `userIsRegistered` is `true`.
 
 :heavy_check_mark: **Solution**
 
@@ -2523,6 +2526,22 @@ function Form(props) {
 
 export default Form;
 ```
+
+# State in React - Declarative vs Imperative Programming Lesson
+
+We have to understand the concept of **state** in order to make our apps more interactive. We can sumarize it in a sort of **equation** `UI = f(State)`, the idea here is that the `UI` that somebody looking at our website sees is a **function of the state of our app**.
+
+## Declarative Programming
+
+A user interface that is dependent upon the value of a state variable is often known as **declarative programming**. We are declaring when we are writting our code how our user interface should look under different conditions, dependent upon the state.
+
+## Imperative Programming
+
+When we say `document.getElementById` and then we tap into its **properties** and then we set it **equal** to something, this is us **imperativelly** telling this **element** to do something different, e.g. `document.getElementById("root").style.textDecoraction = "line-through"`.
+
+> :warning: **WARNING**</br></br>
+> Elements being rendered are not changeable, they need to be re-rendered onto the screen in order for the changes in their **properties**, such as their **style property** to be seen. And to do that we need need to use **hooks**.</br>
+> **Hooks** effectivelly are functions that allows us to **hook** into the state of the app and **read** or **modify** it.
 
 * * *
 
