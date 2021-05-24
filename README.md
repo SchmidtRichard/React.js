@@ -43,9 +43,11 @@
 13. [JavaScript ES6 Arrow Functions (Fat Arrow) Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-arrow-functions-fat-arrow-lesson)</br>
 14. [React Conditional Rendering with the Ternary Operator & AND Operator Lesson](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-lesson)</br>
     14.1 [React Conditional Rendering with the Ternary Operator & AND Operator Challenge](https://github.com/SchmidtRichard/React.js#react-conditional-rendering-with-the-ternary-operator--and-operator-challenge)</br>
-15. [State in React - Declarative vs Imperative Programming Lesson](<>)</br>
-    15.1 [Declarative Programming](<>)</br>
-    15.2 [Imperative Programming](<>)</br>
+15. [State in React - Declarative vs Imperative Programming Lesson](https://github.com/SchmidtRichard/React.js#state-in-react---declarative-vs-imperative-programming-lesson)</br>
+    15.1 [Declarative Programming](https://github.com/SchmidtRichard/React.js#declarative-programming)</br>
+    15.2 [Imperative Programming](https://github.com/SchmidtRichard/React.js#imperative-programming)</br>
+16. [React Hooks - useState Lesson](<>)</br>
+    16.1 [useState Function](<>)</br>
 
 * * *
 
@@ -2527,6 +2529,8 @@ function Form(props) {
 export default Form;
 ```
 
+* * *
+
 # State in React - Declarative vs Imperative Programming Lesson
 
 We have to understand the concept of **state** in order to make our apps more interactive. We can sumarize it in a sort of **equation** `UI = f(State)`, the idea here is that the `UI` that somebody looking at our website sees is a **function of the state of our app**.
@@ -2545,19 +2549,136 @@ When we say `document.getElementById` and then we tap into its **properties** an
 
 * * *
 
-* * *
+# React Hooks - useState Lesson
 
-* * *
+**Hooks** is a way of being able to make our website interactive and actually have **changeable state**. We realy on the `ReactDOM` to actually **render** each of the elements onto the screen, so if we actually want to update what is on the screen we actually have to **re-render** all of what is inside the `ReactDOM`. One way of doing it is by calling `ReactDOM` all over again inside a function, example can be seen below:
 
-* * *
+```js
+import React from "react";
+import ReactDOM from "react-dom";
 
-* * *
+var count = 0;
 
-* * *
+function increase() {
+	count++;
+	console.log(count);
 
-* * *
+	ReactDOM.render(
+		<div className="container">
+			<h1>{count}</h1>
+			<button onClick={increase}>+</button>
+		</div>,
+		document.getElementById("root")
+	);
+}
 
-* * *
+ReactDOM.render(
+	<div className="container">
+		<h1>{count}</h1>
+		<button onClick={increase}>+</button>
+	</div>,
+	document.getElementById("root")
+);
+```
+
+However, the code above is inefficient and the code does not look good, we have a lot of repetition, we can solve this problem by using **hooks**. We can use a **hook** called `useState` that is perfect for this situation.
+
+But one of the **rules** using **hooks** is that you must use a **hook inside a functional component**, so we have to create a **function** that **renders** a **component** and then inside that function we can use **hooks**.
+
+## useState Function
+
+When we use the `useState` **function** the value always **re-renders** when the **state updates**, and it is much more efficient than calling `ReactDOM.render` and it only updates the parts that need to be changed.
+
+Code example below:
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	const state = useState(123);
+
+	//Log what the state is actually equal to
+	console.log("The state is: " + state[0]);
+
+	function increase() {
+		// count++;
+		// console.log("Count = " + count);
+	}
+
+	return (
+		<div className="container">
+			<h1>{state[0]}</h1>
+			<button onClick={increase}>+</button>
+		</div>
+	);
+}
+export default App;
+```
+
+> :information_source: **INFO**</br></br>
+>
+> There is a concept called **destructuring** in JavaScript ES6 which allows us to destructure a complex structure (complex things in JavaScript are: **objects** and **arrays**).
+> The following **array** `const rgb = [9, 132, 227];` can be destructured as follows `const [red, green, blue] = [9, 132, 227];`, and what is happening is that red is going to be mapped to 9, green to 132, and blue to 227.
+
+The previous code would look like the one below after using the **destructuring JavaScript ES6** concept:
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	const state = useState(123);
+
+	const rgb = [ 9, 132, 227 ];
+	const [ red, green, blue ] = [ 9, 132, 227 ];
+
+	console.log("Blue value: " + blue);
+
+	//Log what the state is actually equal to
+	// console.log("The state is: " + state[0]);
+
+	function increase() {
+		// count++;
+		// console.log("Count = " + count);
+	}
+
+	return (
+		<div className="container">
+			<h1>{state[0]}</h1>
+			<button onClick={increase}>+</button>
+		</div>
+	);
+}
+export default App;
+```
+
+So as we know that the `useState` function outputs an **array** with a value and a **function**, then we can give each of these a name instead of just calling it state, now the code would look like the one below:
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	const [ count, setCount ] = useState(0);
+
+	console.log("Count = " + count);
+
+	function increase() {
+		setCount(count + 1);
+	}
+
+	function decrease() {
+		setCount(count - 1);
+	}
+
+	return (
+		<div className="container">
+			<h1>{count}</h1>
+			<button onClick={decrease}>-</button>
+			<button onClick={increase}>+</button>
+		</div>
+	);
+}
+export default App;
+```
 
 * * *
 
