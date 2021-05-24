@@ -46,8 +46,8 @@
 15. [State in React - Declarative vs Imperative Programming Lesson](https://github.com/SchmidtRichard/React.js#state-in-react---declarative-vs-imperative-programming-lesson)</br>
     15.1 [Declarative Programming](https://github.com/SchmidtRichard/React.js#declarative-programming)</br>
     15.2 [Imperative Programming](https://github.com/SchmidtRichard/React.js#imperative-programming)</br>
-16. [React Hooks - useState Lesson](<>)</br>
-    16.1 [useState Function](<>)</br>
+16. [React Hooks - useState Lesson](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-lesson)</br>
+    16.1 [useState Function](https://github.com/SchmidtRichard/React.js#usestate-function)</br>
 
 * * *
 
