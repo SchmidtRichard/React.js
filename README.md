@@ -49,7 +49,9 @@
 16. [React Hooks - useState Lesson](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-lesson)</br>
     16.1 [useState Function](https://github.com/SchmidtRichard/React.js#usestate-function)</br>
     16.2 [React Hooks - useState Challenge](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-challenge)</br>
-17. [Javascript ES6 Object & Array Destructuring Lesson](<>)</br>
+17. [Javascript ES6 Object & Array Destructuring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-lesson)</br>
+    17.1 [Destructuring a Nested Object](<>)</br>
+    17.2 [setState Function](<>)</br>
 
 * * *
 
@@ -2720,21 +2722,21 @@ Challenge Tasks:
 
 -   1.  Given that you can get the current time using:
 
-    -   let time = new Date().toLocaleTimeString();
-    -   console.log(time);
+-   let time = new Date().toLocaleTimeString();
+-   console.log(time);
 
-    -   Show the latest time in the <h1> when the Get Time button is pressed.
+-   Show the latest time in the &lt;h1&lt; when the Get Time button is pressed.
 
 -   2.  Given that you can get code to be called every second
 
     -   using the setInterval method.
-    -   Can you get the time in your <h1> to update every second?
+    -   Can you get the time in your &lt;h1&lt; to update every second?
         e.g. uncomment the code below to see Hey printed every second.
 
-        -   function sayHi() {
-        -   console.log("Hey");
-        -   }
-        -   setInterval(sayHi, 1000);
+        function sayHi() {
+          console.log("Hey");
+        }
+         setInterval(sayHi, 1000);
 
 :heavy_check_mark: **Part 1 - Solution**
 
@@ -2823,3 +2825,126 @@ export default App;
 * * *
 
 # Javascript ES6 Object & Array Destructuring Lesson
+
+**data.js**
+
+```js
+const animals = [ { name: "cat", sound: "meow" }, { name: "dog", sound: "woof" } ];
+
+export default animals;
+```
+
+**index.js**
+
+```js
+/*
+Destructured Array
+Code below reaches inside the animals array and pulls out
+the first item and assigns a name of cat, pulls out the second
+item and assigns a name of dog to it
+*/
+const [ cat, dog ] = animals;
+
+console.log("Animals Array: " + animals);
+console.log("Cat: " + cat);
+console.log("Dog: " + dog);
+```
+
+**index.js**
+
+```js
+/*
+Destructured Object
+*/
+//const { name, sound } = cat;
+//can do the below instead of the above if you want to change the variables names
+const { name: catName, sound: catSound } = cat;
+console.log("Animal Name: " + catName);
+console.log(catName + " sound: " + catSound);
+```
+
+## Destructuring a Nested Object
+
+Let's say we had another **property** in addition to the `name` and `sound` **properties** in the **data.js** `animals` **array** called `feedingRequirements`, and this **property** is going to hold its own **object** and it has a **property** called `food` and another one called `water`. So now we have an **object** that got an **object** inside it.
+
+**data.js**
+
+```js
+const animals = [
+	{
+		name: "cat",
+		sound: "meow",
+		feedingRequirements: {
+			food: 2,
+			water: 3
+		}
+	},
+	{ name: "dog", sound: "woof" }
+];
+
+export default animals;
+```
+
+Below is how we would destructure the **nested objects** above:
+
+**index.js**
+
+```js
+//Destructuring Nested Object
+//const { name, sound, feedingRequirements } = cat;
+// console.log(feedingRequirements);
+// console.log("Number of times we need to feed the cat: " + feedingRequirements.food);
+const { name, sound, feedingRequirements: { food, water } } = cat;
+console.log("Number of times we need to feed the cat: " + food);
+```
+
+## setState Function
+
+**data.js**
+
+```js
+const animals = [
+	{
+		name: "cat",
+		sound: "meow",
+		feedingRequirements: {
+			food: 2,
+			water: 3
+		}
+	},
+	{ name: "dog", sound: "woof" }
+];
+
+//setState
+//Accept an animal as an input in the function
+function useAnimals(animal) {
+	return [
+		animal.name,
+		function() {
+			console.log(animal.sound);
+		}
+	];
+}
+
+export default animals;
+export { useAnimals };
+```
+
+**index.js**
+
+```js
+import animals, { useAnimals } from "./data.js";
+
+const [ cat, dog ] = animals;
+
+//setState - data.js
+//console.log(useAnimals(cat));
+/*
+The output of the useAnimals(cat) function is
+an array so we can destructure it
+*/
+const [ animal, makeSound ] = useAnimals(cat);
+console.log("\nsetState - data.js");
+console.log("The output is: " + animal);
+makeSound();
+```

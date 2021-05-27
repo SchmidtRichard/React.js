@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import animals from "./data.js";
+import animals, { useAnimals } from "./data.js";
 
 /*
 Destructured Array
@@ -30,6 +29,17 @@ Destructured Object
 const { name, sound, feedingRequirements: { food, water } } = cat;
 console.log("\nDestructuring an Object");
 console.log("Number of times we need to feed the cat: " + food);
+
+//setState - data.js
+//console.log(useAnimals(cat));
+/*
+The output of the useAnimals(cat) function is 
+an array so we can destructure it
+*/
+const [ animal, makeSound ] = useAnimals(cat);
+console.log("\nsetState - data.js");
+console.log("The output is: " + animal);
+makeSound();
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 // import React from "react";

@@ -12,6 +12,14 @@ const animals = [
 
 //setState
 //Accept an animal as an input in the function
-function useAnimails() {}
+function useAnimals(animal) {
+	return [
+		animal.name,
+		function() {
+			console.log(animal.sound);
+		}
+	];
+}
 
 export default animals;
+export { useAnimals };
