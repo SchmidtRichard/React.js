@@ -50,8 +50,8 @@
     16.1 [useState Function](https://github.com/SchmidtRichard/React.js#usestate-function)</br>
     16.2 [React Hooks - useState Challenge](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-challenge)</br>
 17. [Javascript ES6 Object & Array Destructuring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-lesson)</br>
-    17.1 [Destructuring a Nested Object](<>)</br>
-    17.2 [setState Function](<>)</br>
+    17.1 [Destructuring a Nested Object](https://github.com/SchmidtRichard/React.js#destructuring-a-nested-object)</br>
+    17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
 
 * * *
 
@@ -2725,18 +2725,18 @@ Challenge Tasks:
 -   let time = new Date().toLocaleTimeString();
 -   console.log(time);
 
--   Show the latest time in the &lt;h1&lt; when the Get Time button is pressed.
+-   Show the latest time in the &lt;h1> when the Get Time button is pressed.
 
 -   2.  Given that you can get code to be called every second
 
     -   using the setInterval method.
-    -   Can you get the time in your &lt;h1&lt; to update every second?
+    -   Can you get the time in your &lt;h1> to update every second?
         e.g. uncomment the code below to see Hey printed every second.
 
-        function sayHi() {
-          console.log("Hey");
-        }
-         setInterval(sayHi, 1000);
+        function sayHi() {</br>
+          console.log("Hey");</br>
+        }</br>
+         setInterval(sayHi, 1000);</br>
 
 :heavy_check_mark: **Part 1 - Solution**
 
