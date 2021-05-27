@@ -48,7 +48,8 @@
     15.2 [Imperative Programming](https://github.com/SchmidtRichard/React.js#imperative-programming)</br>
 16. [React Hooks - useState Lesson](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-lesson)</br>
     16.1 [useState Function](https://github.com/SchmidtRichard/React.js#usestate-function)</br>
-    16.2 [React Hooks - useState Challenge](<>)</br>
+    16.2 [React Hooks - useState Challenge](https://github.com/SchmidtRichard/React.js#react-hooks---usestate-challenge)</br>
+17. [Javascript ES6 Object & Array Destructuring Lesson](<>)</br>
 
 * * *
 
@@ -2818,3 +2819,7 @@ function App() {
 
 export default App;
 ```
+
+* * *
+
+# Javascript ES6 Object & Array Destructuring Lesson
