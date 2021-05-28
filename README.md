@@ -52,6 +52,7 @@
 17. [Javascript ES6 Object & Array Destructuring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-lesson)</br>
     17.1 [Destructuring a Nested Object](https://github.com/SchmidtRichard/React.js#destructuring-a-nested-object)</br>
     17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
+    17.3 [Javascript ES6 Object & Array Destructuring Challenge](<>)</br>
 
 * * *
 
@@ -2947,4 +2948,114 @@ const [ animal, makeSound ] = useAnimals(cat);
 console.log("\nsetState - data.js");
 console.log("The output is: " + animal);
 makeSound();
+```
+
+## Javascript ES6 Object & Array Destructuring Challenge
+
+:question: Challenge: **Destructure** the code below:
+
+**practice.js**
+
+```js
+const cars = [
+	{
+		model: "Honda Civic",
+		//The top colour refers to the first item in the array below:
+		//i.e. hondaTopColour = "black"
+		coloursByPopularity: [ "black", "silver" ],
+		speedStats: {
+			topSpeed: 140,
+			zeroToSixty: 8.5
+		}
+	},
+	{
+		model: "Tesla Model 3",
+		coloursByPopularity: [ "red", "white" ],
+		speedStats: {
+			topSpeed: 150,
+			zeroToSixty: 3.2
+		}
+	}
+];
+
+export default cars;
+```
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import cars from "./practice.js";
+
+console.log("Cars Array: " + cars);
+
+ReactDOM.render(
+	<table>
+		<tr>
+			<th>Brand</th>
+			<th>Top Speed</th>
+			<th>Top Colours</th>
+		</tr>
+		<tr>
+			<td>{tesla.model}</td>
+			<td>{teslaTopSpeed}</td>
+			<td>{tesla.TopColour}</td>
+		</tr>
+		<tr>
+			<td>{honda.model}</td>
+			<td>{hondaTopSpeed}</td>
+			<td>{honda.TopColour}</td>
+		</tr>
+	</table>,
+	document.getElementById("root")
+);
+```
+
+:heavy_check_mark: **Solution**
+
+**practice.js** does not change!
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import cars from "./practice.js";
+
+console.log("Cars Array: " + cars);
+
+//Destructure the cars array so that we have variables names assigned to the first and second items
+const [ honda, tesla ] = cars;
+
+console.log("Destructured cars array: " + honda);
+
+//Destructure the cars array and pullout speedStats
+const { speedStats: { topSpeed: hondaTopSpeed } } = honda;
+const { speedStats: { topSpeed: teslaTopSpeed } } = tesla;
+
+//Destructure the cars array and pullout coloursByPopularity
+const { coloursByPopularity: [ hondaTopColour ] } = honda;
+const { coloursByPopularity: [ teslaTopColour ] } = tesla;
+
+ReactDOM.render(
+	<table>
+		<tr>
+			<th>Brand</th>
+			<th>Top Speed</th>
+			<th>Top Colours</th>
+		</tr>
+		<tr>
+			<td>{tesla.model}</td>
+			<td>{teslaTopSpeed}</td>
+			<td>{teslaTopColour}</td>
+		</tr>
+		<tr>
+			<td>{honda.model}</td>
+			<td>{hondaTopSpeed}</td>
+			<td>{hondaTopColour}</td>
+		</tr>
+	</table>,
+	document.getElementById("root")
+);
 ```
