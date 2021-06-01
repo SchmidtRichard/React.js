@@ -53,7 +53,7 @@
     17.1 [Destructuring a Nested Object](https://github.com/SchmidtRichard/React.js#destructuring-a-nested-object)</br>
     17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
     17.3 [Javascript ES6 Object & Array Destructuring Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-challenge)</br>
-18. [Event Handling in React Lesson](<>)</br>
+18. [Event Handling in React Lesson](https://github.com/SchmidtRichard/React.js#event-handling-in-react-lesson)</br>
 
 * * *
 
@@ -3087,7 +3087,7 @@ function App() {
 export default App;
 ```
 
-:heavy_check_mark: Change the code above so when we hover over the button with the mouse, the background color changes to **black** and then back to **white** once we hover out the button. The final code is the one below:
+:heavy_check_mark: [Change the code](https://www.w3schools.com/tags/ref_eventattributes.asp) above so when we hover over the button with the mouse, the background color changes to **black** and then back to **white** once we hover out the button. The final code is the one below:
 
 **App.js**
 
