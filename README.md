@@ -52,7 +52,8 @@
 17. [Javascript ES6 Object & Array Destructuring Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-lesson)</br>
     17.1 [Destructuring a Nested Object](https://github.com/SchmidtRichard/React.js#destructuring-a-nested-object)</br>
     17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
-    17.3 [Javascript ES6 Object & Array Destructuring Challenge](<>)</br>
+    17.3 [Javascript ES6 Object & Array Destructuring Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-challenge)</br>
+18. [Event Handling in React Lesson](<>)</br>
 
 * * *
 
@@ -3058,4 +3059,83 @@ ReactDOM.render(
 	</table>,
 	document.getElementById("root")
 );
+```
+
+* * *
+
+# Event Handling in React Lesson
+
+How we can detect when the user interacts with our app or our components and how we can use **React** to **render** different things depending on these **events**.
+
+:question: The starting code is the one below:
+
+**App.js**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div className="container">
+      <h1>Hello</h1>
+      <input type="text" placeholder="What's your name?" />
+      <button>Submit</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+:heavy_check_mark: Change the code above so when we hover over the button with the mouse, the background color changes to **black** and then back to **white** once we hover out the button. The final code is the one below:
+
+**App.js**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	const [ headingText, setHeadingText ] = useState("Hello there");
+
+	function handleClick() {
+		console.log("Clicked");
+
+		//Change the text in the h1 once the button gets clicked
+		setHeadingText("Submitted");
+	}
+
+	const [ isMousedOver, setMouseOver ] = useState(false);
+
+	function handleMouseOver() {
+		console.log("Moused Over");
+
+		//Change the color of the button once we hover it with the mouse
+		setMouseOver(true);
+	}
+
+	function handleMouseOut() {
+		console.log("Mouse Out");
+
+		//Change the color of the button back to white once we hover the mouse out
+		setMouseOver(false);
+	}
+
+	return (
+		<div className="container">
+			<h1>{headingText}</h1>
+			<input type="text" placeholder="What's your name?" />
+
+			<button
+				style={{ backgroundColor: isMousedOver ? "black" : "white" }}
+				onClick={handleClick}
+				onMouseOver={handleMouseOver}
+				onMouseOut={handleMouseOut}
+			>
+				Submit
+			</button>
+		</div>
+	);
+}
+
+export default App;
 ```
