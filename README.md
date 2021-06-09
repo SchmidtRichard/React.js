@@ -54,6 +54,7 @@
     17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
     17.3 [Javascript ES6 Object & Array Destructuring Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-challenge)</br>
 18. [Event Handling in React Lesson](https://github.com/SchmidtRichard/React.js#event-handling-in-react-lesson)</br>
+19. [React Forms Lesson](<>)</br>
 
 * * *
 
@@ -3133,6 +3134,69 @@ function App() {
 			>
 				Submit
 			</button>
+		</div>
+	);
+}
+
+export default App;
+```
+
+* * *
+
+# React Forms Lesson
+
+Tackle how we can get the **user inputs** from the **input element** and how we can use the submit button in order to use the information that the user has typed in.
+
+We have an **event** called `onChange` in the **input element**, which is triggered every time the value of the input changes, so when the user types something new inside.
+
+When the **input element** triggers the **function** that is stored in the `onChange` **event**, it also passes over an **object**, and that **object** corresponds to the **event** that triggered the `onChange` event. And we can **log** various things related to that **event** e.g. `event.target.value`, the `event` is the **event** that triggered the `onChange`, the `target` is the **element** that triggered this **event** and the `value` or any of the other properties on `target` are the things that correspond to the value of some of these attributes.
+
+In **HTML** the elements themselves are responsible for handling their own state. For example, the **attribute** called `value`, and it corresponds to what is currently inside the **input**. In **HTML** this value is normally handled by the input property and it sets it to whatever is being typed in the form. But in **React** what we should really do is set the value to the **variable** that comes from the `event.target.value` which in this example is `name`. This way we have one single source of truth which is the **state of name**, so whenever we use it inside other **components** or when we have it as the **value** of the inputs, they are all corresponding to the same thing and they are all going to match up. And this in **React** lingo is called a **[controlled components](https://reactjs.org/docs/forms.html#controlled-components)**.
+
+:question: The starting code is the one below:
+
+**App.jsx**
+
+    import React from "react";
+
+    function App() {
+      return (
+        <div className="container">
+          <h1>Hello </h1>
+          <input type="text" placeholder="What's your name?" />
+          <button>Submit</button>
+        </div>
+      );
+    }
+
+    export default App;
+
+:heavy_check_mark: Final Code:
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	//State - destructure the output for useState to hold two things: name and the function -> setName
+	const [ name, setName ] = useState("");
+
+	//Function that will be triggered every time the input is changed
+	function handleChange(event) {
+		console.log("Changed");
+		console.log("Value: " + event.target.value);
+		console.log("Placeholder: " + event.target.placeholder);
+		console.log("Type: " + event.target.type);
+
+		setName(event.target.value);
+	}
+
+	return (
+		<div className="container">
+			<h1>Hello {name}</h1>
+			<input type="text" onChange={handleChange} placeholder="What's your name?" value={name} />
+			<button>Submit</button>
 		</div>
 	);
 }
