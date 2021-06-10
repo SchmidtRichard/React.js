@@ -3195,7 +3195,12 @@ function App() {
 	return (
 		<div className="container">
 			<h1>Hello {name}</h1>
-			<input type="text" onChange={handleChange} placeholder="What's your name?" value={name} />
+			<input
+        type="text"
+        onChange={handleChange}
+        placeholder="What's your name?"
+        value={name}
+      />
 			<button>Submit</button>
 		</div>
 	);
