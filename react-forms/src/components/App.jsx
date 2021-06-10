@@ -16,8 +16,9 @@ function App() {
 		setName(event.target.value);
 	}
 
-	function handleClick() {
+	function handleClick(event) {
 		setHeading(name);
+
 		console.log("Name: " + name);
 	}
 

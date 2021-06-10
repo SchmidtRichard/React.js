@@ -54,7 +54,8 @@
     17.2 [setState Function](https://github.com/SchmidtRichard/React.js#setstate-function)</br>
     17.3 [Javascript ES6 Object & Array Destructuring Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-challenge)</br>
 18. [Event Handling in React Lesson](https://github.com/SchmidtRichard/React.js#event-handling-in-react-lesson)</br>
-19. [React Forms Lesson](<>)</br>
+19. [React Forms Lesson](https://github.com/SchmidtRichard/React.js#react-forms-lesson)</br>
+    19.1[React Forms Challenge](<>)</br>
 
 * * *
 
@@ -3202,6 +3203,56 @@ function App() {
         value={name}
       />
 			<button>Submit</button>
+		</div>
+	);
+}
+
+export default App;
+```
+
+## React Forms Challenge
+
+:question: Take the final code above and change it so that the heading only changes when the button is clicked.
+
+:heavy_check_mark: Final Code:
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+	//State - destructure the output for useState to hold two things: name and the function -> setName
+	const [ name, setName ] = useState("");
+
+	const [ headingText, setHeading ] = useState("");
+
+	//Function that will be triggered every time the input is changed
+	function handleChange(event) {
+		console.log("Changed");
+		console.log("Value: " + event.target.value);
+		console.log("Placeholder: " + event.target.placeholder);
+		console.log("Type: " + event.target.type);
+
+		setName(event.target.value);
+	}
+
+	function handleClick(event) {
+		setHeading(name);
+
+		console.log("Name: " + name);
+	}
+
+	return (
+		<div className="container">
+			<h1>Hello {headingText}</h1>
+			<input
+        type="text"
+        onChange={handleChange}
+        placeholder="What's your name?"
+        value={name}
+      />
+			<button onClick={handleClick}>Submit</button>
 		</div>
 	);
 }
