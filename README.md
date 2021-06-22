@@ -55,7 +55,8 @@
     17.3 [Javascript ES6 Object & Array Destructuring Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-object--array-destructuring-challenge)</br>
 18. [Event Handling in React Lesson](https://github.com/SchmidtRichard/React.js#event-handling-in-react-lesson)</br>
 19. [React Forms Lesson](https://github.com/SchmidtRichard/React.js#react-forms-lesson)</br>
-    19.1[React Forms Challenge](<>)</br>
+    19.1 [React Forms Challenge](https://github.com/SchmidtRichard/React.js#react-forms-challenge)</br>
+20. [Class Components vs Functional Components - Hooks vs Classes Lesson](<>)</br>
 
 * * *
 
@@ -3258,4 +3259,125 @@ function App() {
 }
 
 export default App;
+```
+
+* * *
+
+# Class Components vs Functional Components - Hooks vs Classes Lesson
+
+**Hook**
+
+```js
+import React from "react";
+
+function App() {
+	return <h1>Hello</h1>;
+}
+
+export default App;
+```
+
+The above as a **class** instead of a **hook**.
+
+```js
+import React from "react";
+
+class App extends React.Component {
+	render() {
+		return <h1>Hello</h1>;
+	}
+}
+
+export default App;
+```
+
+The result of both of the codes above are the same.
+
+The main reasoon why people would convert their **function components** into **class components** in the past was because it was required in ordr to have **state**. Before you had to convert the **functions** into a **class** in order to use **state**.
+
+According to **React** documentation we should is to always use **hooks** instead of ** classes** when writting new code as this is a much easier way of **managing state**.
+
+We **cannot** use **hooks** inside of a **class component**, but we can mix **classes** and **function components** with **hooks** in a single **tree**.
+
+Below follows more comparation between **class components vs functional components**.
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+**App.jsx**
+
+```js
+import React from "react";
+import ClassComponent from "./ClassComponent";
+import FunctionalComponent from "./FunctionalComponent";
+
+class App extends React.Component {
+  render() {
+    return <ClassComponent />;
+    // return <FunctionalComponent />;
+  }
+}
+
+export default App;
+```
+
+**ClassComponents.jsx**
+
+```js
+import React from "react";
+
+class ClassComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+    this.increase = this.increase.bind(this);
+  }
+
+  increase() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.increase}>+</button>
+      </div>
+    );
+  }
+}
+
+export default ClassComponent;
+```
+
+**FunctionalComponent.jsx**
+
+```js
+import React, { useState } from "react";
+
+function FunctionalComponent() {
+  const [count, setCount] = useState(0);
+
+  function increase() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increase}>+</button>
+    </div>
+  );
+}
+
+export default FunctionalComponent;
 ```
