@@ -27,30 +27,34 @@ function App() {
     only change the fName and so on... the other part should stay as it was
     */
     function handleChange(event) {
-        const newValue = event.target.value;
-        const inputName = event.target.name;
+        // const newValue = event.target.value;
+        // const inputName = event.target.name;
+        //Another approach to the code above is to use object destructuring
+        const {value, name} = event.target;
 
-        console.log("New Value " + newValue);
-        console.log("Input Name " + inputName);
+        // console.log("New Value " + newValue);
+        // console.log("Input Name " + inputName);
+        console.log("New Value " + value);
+        console.log("Input Name " + name);
 
         //Arrow function - when setFullName is called it can get access to the previous value
         setFullName((prevValue) => {
             console.log(prevValue);
 
-            if(inputName === "fName") {
+            if(name === "fName") {
                 /*
                 Return a new object where fName is corresponding to the new value
                 and then the lName is corresponding to the previous value
                  */
                 return {
-                    fName: newValue,
+                    fName: value,
                     lName: prevValue.lName
                 }
                 //If the user edits the Last Name field first
-            } else if(inputName === "lName") {
+            } else if(name === "lName") {
                 return {
                     fName: prevValue.fName,
-                    lName: newValue
+                    lName: value
                 }
             }
         });
