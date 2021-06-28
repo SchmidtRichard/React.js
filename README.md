@@ -3499,7 +3499,15 @@ function App() {
         console.log("New Value " + value);
         console.log("Input Name " + name);
 
-        //Arrow function - when setFullName is called it can get access to the previous value
+        /*
+        Arrow function - when setFullName is called it can get access to the previous value
+
+        handleChange is called when the user enters a value into the input fields
+        it then passes the event that led to the change, and we will end up with a
+        new value and having an input name, and when it happens then the setFullName arrow
+        function gets called and when setFullName gets called we are passing in a function
+        which will get hold of the previous value of fullName
+         */
         setFullName((prevValue) => {
             console.log(prevValue);
 
