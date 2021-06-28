@@ -77,6 +77,17 @@ npm start
 
 Then open up the project folder and delete everything that is not needed, only leave: `public/index.html`, `src/index.js`, `node_modules`, `.gitignore`, `package-lock.json`, `package.json`, and `README.md`.
 
+When downloading code from somewhere we may need to install the `node_modules`, the error below would be displayed if trying to run our app (`npm start`)
+
+> :warning: **WARNING**</br></br>
+> Local package.json exists, but node_modules missing
+
+Run the below code to install the missing `node_modules`
+
+```js
+npm install
+```
+
 * * *
 
 # CodeSandbox
