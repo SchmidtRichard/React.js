@@ -56,7 +56,8 @@
 18. [Event Handling in React Lesson](https://github.com/SchmidtRichard/React.js#event-handling-in-react-lesson)</br>
 19. [React Forms Lesson](https://github.com/SchmidtRichard/React.js#react-forms-lesson)</br>
     19.1 [React Forms Challenge](https://github.com/SchmidtRichard/React.js#react-forms-challenge)</br>
-20. [Class Components vs Functional Components - Hooks vs Classes Lesson](<>)</br>
+20. [Class Components vs Functional Components - Hooks vs Classes Lesson](https://github.com/SchmidtRichard/React.js#class-components-vs-functional-components---hooks-vs-classes-lesson)</br>
+21. [Changing Complex State Lesson](<>)</br>
 
 * * *
 
@@ -3380,4 +3381,159 @@ function FunctionalComponent() {
 }
 
 export default FunctionalComponent;
+```
+
+* * *
+
+# Changing Complex State Lesson
+
+Starting code:
+
+**App.jsx**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div className="container">
+      <h1>Hello</h1>
+      <form>
+        <input name="fName" placeholder="First Name" />
+        <input name="lName" placeholder="Last Name" />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+The first way to get the **first and last name** displayed on the `h1` can be seen in the code below:
+
+**App.jsx**
+
+```js
+import React, {useState} from "react";
+
+function App() {
+
+    //Stateful const to hold the values entered into the inputs
+    const [fName, setFName] = useState("");
+    const [lName, setLName] = useState("");
+
+    //Function to update the first name - when the onChange gets triggered we get past the event
+    function updateFName(event) {
+        const firstName = event.target.value;
+
+        //Update the fName const using the setFName method and pass it the new value
+        setFName(firstName);
+    }
+
+    //Function to update the last name - when the onChange gets triggered we get past the event
+    function  updateLName(event) {
+        const lastName = event.target.value;
+
+        //Update the lName const using the setLName method and pass it the new value
+        setLName(lastName);
+    }
+
+  return (
+    <div className="container">
+      <h1>Hello {fName} {lName}</h1>
+      <form>
+          {/*The onChange property call the updateFName and updateLName functions*/}
+        <input name="fName" onChange={updateFName} placeholder="First Name" value={fName}/>
+        <input name="lName" onChange={updateLName} placeholder="Last Name" value={lName}/>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+`const [fName, setFName] = useState("");` and `const [lName, setLName] = useState("");` should probably be associated with each other (first and last name probably should belong inside the same **JavaScript object**). In order to **manage a more complex piece of state** like the one above, we can simply use **useState** but instead of storing a **simple value**, we can actually get it to store an **object** as well.
+
+**App.jsx**
+
+```js
+import React, {useState} from "react";
+
+function App() {
+
+    //Stateful const to hold the values entered into the inputs
+    const [fullName, setFullName] = useState({
+        /*
+        Specify the initial state, which is going to be an object
+        and the first key will be fName and the second one lName,
+        both with no values (empty string).
+
+        Now fullName is storing an object, and when we call setFullName ideally,
+        we want to set fName and lName to a new object
+         */
+        fName: "",
+        lName: ""
+    });
+
+    /*
+    When the inputs are changes (onChange gets triggered), they are going
+    to call the same function (handleChange), passing over the event that
+    calls this change. And then inside the function we are going to get hold
+    of the new value which we will just call newValue.
+
+    But we also need to get hold of the previous value of the fullName (the object inside essentially)
+    so we can add to it the parts that have been changed, e.g. if the First Name input changes then
+    only change the fName and so on... the other part should stay as it was
+    */
+    function handleChange(event) {
+        // const newValue = event.target.value;
+        // const inputName = event.target.name;
+        //Another approach to the code above is to use object destructuring
+        const {value, name} = event.target;
+
+        // console.log("New Value " + newValue);
+        // console.log("Input Name " + inputName);
+        console.log("New Value " + value);
+        console.log("Input Name " + name);
+
+        //Arrow function - when setFullName is called it can get access to the previous value
+        setFullName((prevValue) => {
+            console.log(prevValue);
+
+            if(name === "fName") {
+                /*
+                Return a new object where fName is corresponding to the new value
+                and then the lName is corresponding to the previous value
+                 */
+                return {
+                    fName: value,
+                    lName: prevValue.lName
+                }
+                //If the user edits the Last Name field first
+            } else if(name === "lName") {
+                return {
+                    fName: prevValue.fName,
+                    lName: value
+                }
+            }
+        });
+    }
+
+  return (
+    <div className="container">
+      <h1>Hello {fullName.fName} {fullName.lName}</h1>
+      <form>
+          {/*The onChange property call the updateFName and updateLName functions*/}
+        <input name="fName" onChange={handleChange} placeholder="First Name" value={fullName.fName}/>
+        <input name="lName" onChange={handleChange} placeholder="Last Name" value={fullName.lName}/>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
 ```
