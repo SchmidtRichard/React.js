@@ -57,7 +57,7 @@
 19. [React Forms Lesson](https://github.com/SchmidtRichard/React.js#react-forms-lesson)</br>
     19.1 [React Forms Challenge](https://github.com/SchmidtRichard/React.js#react-forms-challenge)</br>
 20. [Class Components vs Functional Components - Hooks vs Classes Lesson](https://github.com/SchmidtRichard/React.js#class-components-vs-functional-components---hooks-vs-classes-lesson)</br>
-21. [Changing Complex State Lesson](<>)</br>
+21. [Changing Complex State Lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-lesson)</br>
 
 * * *
 
@@ -86,6 +86,12 @@ Run the below code to install the missing `node_modules`
 
 ```js
 npm install
+```
+
+The application can be started as normal after installing the missing `node_modules`
+
+```js
+npm start
 ```
 
 * * *
@@ -3397,6 +3403,8 @@ export default FunctionalComponent;
 * * *
 
 # Changing Complex State Lesson
+
+Complex state: the state of **JavaScript objects** where we might have to retrieve the previous value of the object.
 
 Starting code:
 
