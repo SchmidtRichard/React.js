@@ -58,7 +58,7 @@
     19.1 [React Forms Challenge](https://github.com/SchmidtRichard/React.js#react-forms-challenge)</br>
 20. [Class Components vs Functional Components - Hooks vs Classes Lesson](https://github.com/SchmidtRichard/React.js#class-components-vs-functional-components---hooks-vs-classes-lesson)</br>
 21. [Changing Complex State Lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-lesson)</br>
-    21.1 [Changing Complex State Challenge](<>)</br>
+    21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
 
 * * *
 
@@ -3569,10 +3569,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1. Using JS Objects with state.
-2. Making use of previous state when changing state.
-3. Working with forms in React.
-4. Handing events
+1\. Using JS Objects with state.
+2\. Making use of previous state when changing state.
+3\. Working with forms in React.
+4\. Handing events
 
 **App.jsx**
 
