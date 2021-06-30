@@ -59,6 +59,7 @@
 20. [Class Components vs Functional Components - Hooks vs Classes Lesson](https://github.com/SchmidtRichard/React.js#class-components-vs-functional-components---hooks-vs-classes-lesson)</br>
 21. [Changing Complex State Lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-lesson)</br>
     21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
+22. [JavaScript ES6 Spread Operator Lesson](<>)</br>
 
 * * *
 
@@ -3699,3 +3700,66 @@ function App() {
 
 export default App;
 ```
+
+* * *
+
+# JavaScript ES6 Spread Operator Lesson
+
+Here we will look at ways in which we can reduce the amount of code and simplify the code from the previous [lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge). Which will involve in large part the **[spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)**.
+
+A way **ES6 operator** allows us to add items of an **array** to another **array** can be seen below:
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+const citrus = ["lime", "lemon", "orange"];
+
+//Use the ES6 spread operator to add the citrus fruits into the fruits array
+// const fruits = ["apple", "banana", "coconut", ...citrus];
+//Can also add in a different order, like in the example below
+const fruits = ["apple", ...citrus, "banana", "coconut"];
+
+console.log("Citrus Array: " + citrus);
+console.log("Frits Array: " + fruits);
+```
+
+Another example using **ES6 operator** is to do the same but instead of using **arrays**, we will use **objects** now, where we will insert the `fullName` **object** inside the `user` \*\*objects:
+
+**index.js**
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+//We can also use the spread operator with objects as well
+const fullName = {
+    fName: "Richard",
+    lName: "Schmidt"
+};
+
+const user = {
+    /*
+    Insert the fullName object into the user object
+    now the user object will be comprised of all the elements
+    inside the fullName object as well as any other ones
+    such as id and username
+    */
+    ...fullName,
+    //And then insert any other items we may want
+    id: 1,
+    username: "richardschmidt007"
+};
+
+console.log("User Object: " + user);
+```
+
+Now we will use the **spread opetator** to shorten the code from the previous [lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge).
