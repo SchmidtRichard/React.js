@@ -59,7 +59,7 @@
 20. [Class Components vs Functional Components - Hooks vs Classes Lesson](https://github.com/SchmidtRichard/React.js#class-components-vs-functional-components---hooks-vs-classes-lesson)</br>
 21. [Changing Complex State Lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-lesson)</br>
     21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
-22. [JavaScript ES6 Spread Operator Lesson](<>)</br>
+22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
 
 * * *
 
@@ -3570,10 +3570,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1\. Using JS Objects with state.
-2\. Making use of previous state when changing state.
-3\. Working with forms in React.
-4\. Handing events
+1. Using JS Objects with state.
+2. Making use of previous state when changing state.
+3. Working with forms in React.
+4. Handing events
 
 **App.jsx**
 
@@ -3762,4 +3762,99 @@ const user = {
 console.log("User Object: " + user);
 ```
 
-Now we will use the **spread opetator** to shorten the code from the previous [lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge).
+Now we will use the **spread operator** to shorten the code from the previous [lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge).
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+  const [contact, setContact] = useState({
+    fName: "",
+    lName: "",
+    email: ""
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setContact(prevValue => {
+      /*
+      The code below using the spread operator replaces the if statements below (commented code)
+
+      Return an object where we use the spread operator to add in the previous value (preValue)
+      of the object e.g. the last name property, the first name property, or the email property... whatever
+      it is that we had previously, and then we are going to add in a new value for whichever name
+      of input that got passed in and the value that the user typed in
+      */
+      return {
+        ...prevValue,
+        [name]: value
+      };
+
+      //The code above can be shorted even more like the example below
+      /*
+        function handleChange(event) {
+          const { name, value } = event.target;
+          setContact(prevValue => ({ ...prevValue, [name]: value }));
+        }
+       */
+
+
+
+      // if (name === "fName") {
+      //   return {
+      //     fName: value,
+      //     lName: prevValue.lName,
+      //     email: prevValue.email
+      //   };
+      // } else if (name === "lName") {
+      //   return {
+      //     fName: prevValue.fName,
+      //     lName: value,
+      //     email: prevValue.email
+      //   };
+      // } else if (name === "email") {
+      //   return {
+      //     fName: prevValue.fName,
+      //     lName: prevValue.lName,
+      //     email: value
+      //   };
+      // }
+    });
+  }
+
+  return (
+    <div className="container">
+      <h1>
+        Hello {contact.fName} {contact.lName}
+      </h1>
+      <p>{contact.email}</p>
+      <form>
+        <input
+          onChange={handleChange}
+          name="fName"
+          value={contact.fName}
+          placeholder="First Name"
+        />
+        <input
+          onChange={handleChange}
+          name="lName"
+          value={contact.lName}
+          placeholder="Last Name"
+        />
+        <input
+          onChange={handleChange}
+          name="email"
+          value={contact.email}
+          placeholder="Email"
+        />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
