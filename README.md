@@ -3570,10 +3570,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1. Using JS Objects with state.
-2. Making use of previous state when changing state.
-3. Working with forms in React.
-4. Handing events
+1\. Using JS Objects with state.
+2\. Making use of previous state when changing state.
+3\. Working with forms in React.
+4\. Handing events
 
 **App.jsx**
 
@@ -3784,9 +3784,9 @@ function App() {
       The code below using the spread operator replaces the if statements below (commented code)
 
       Return an object where we use the spread operator to add in the previous value (preValue)
-      of the object e.g. the last name property, the first name property, or the email property... whatever
-      it is that we had previously, and then we are going to add in a new value for whichever name
-      of input that got passed in and the value that the user typed in
+      of the object e.g. the last name property, the first name property, or the email
+      property... whatever it is that we had previously, and then we are going to add in a new
+      value for whichever name of input that got passed in and the value that the user typed in
       */
       return {
         ...prevValue,
