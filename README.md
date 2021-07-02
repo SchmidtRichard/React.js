@@ -60,6 +60,7 @@
 21. [Changing Complex State Lesson](https://github.com/SchmidtRichard/React.js#changing-complex-state-lesson)</br>
     21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
 22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
+    22.1 [JavaScript ES6 Spread Operator Challenge](<>)</br>
 
 * * *
 
@@ -3852,6 +3853,43 @@ function App() {
         />
         <button>Submit</button>
       </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## JavaScript ES6 Spread Operator Challenge
+
+:question: CHALLENGE: Make this app work by applying what you've learnt.
+
+1.  When new text is written into the **input**, its **state** should be saved.
+2.  When the **add button** is **pressed**, the current data in the input should be added to an **array**.
+3.  The **`<ul>`** should display all the array items as <li>s
+
+**App.jsx**
+
+```js
+import React from "react";
+
+function App() {
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input type="text" />
+        <button>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li>A Item </li>
+        </ul>
+      </div>
     </div>
   );
 }
