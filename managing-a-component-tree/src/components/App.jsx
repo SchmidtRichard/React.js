@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ToDoItem from "./ToDoItem.jsx";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -27,10 +28,19 @@ function App() {
           <span>Add</span>
         </button>
       </div>
+
       <div>
         <ul>
           {items.map(todoItem => (
-            <li>{todoItem}</li>
+            /*
+            In order to display a different ToDoItem each time we map through the
+            items array, we will pass the todoItem which is the text the
+            <ToDoItem /> should display as a property, we will call the property text
+            Now the text can be received inside the ToDoItem components as
+            one of the props
+            */
+            <ToDoItem text={todoItem}/>
+
           ))}
         </ul>
       </div>

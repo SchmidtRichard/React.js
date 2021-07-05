@@ -61,6 +61,7 @@
     21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
 22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
     22.1 [JavaScript ES6 Spread Operator Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-challenge)</br>
+23. [Managing a Component Tree Lesson](<>)</br>
 
 * * *
 
@@ -3968,6 +3969,58 @@ function App() {
           })}
         </ul>
 
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+* * *
+
+# Managing a Component Tree Lesson
+
+A **React.js** app would be broken down into multiple **components**. The code from the previous lesson (also seen below) will be breaken into multiple **components**.
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem() {
+    setItems(prevItems => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={inputText} />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {items.map(todoItem => (
+            <li>{todoItem}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
