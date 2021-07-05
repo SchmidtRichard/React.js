@@ -61,7 +61,8 @@
     21.1 [Changing Complex State Challenge](https://github.com/SchmidtRichard/React.js#changing-complex-state-challenge)</br>
 22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
     22.1 [JavaScript ES6 Spread Operator Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-challenge)</br>
-23. [Managing a Component Tree Lesson](<>)</br>
+23. [Managing a Component Tree Lesson](https://github.com/SchmidtRichard/React.js#managing-a-component-tree-lesson)</br>
+    23.1 [Managing a Component Tree Challenge](<>)</br>
 
 * * *
 
