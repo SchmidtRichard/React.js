@@ -62,7 +62,8 @@
 22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
     22.1 [JavaScript ES6 Spread Operator Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-challenge)</br>
 23. [Managing a Component Tree Lesson](https://github.com/SchmidtRichard/React.js#managing-a-component-tree-lesson)</br>
-    23.1 [Managing a Component Tree Challenge](<>)</br>
+    23.1 [Change the State of a Parent Component](<>)</br>
+    23.2 [Managing a Component Tree Challenge](<>)</br>
 
 * * *
 
@@ -3573,10 +3574,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1\. Using JS Objects with state.
-2\. Making use of previous state when changing state.
-3\. Working with forms in React.
-4\. Handing events
+1. Using JS Objects with state.
+2. Making use of previous state when changing state.
+3. Working with forms in React.
+4. Handing events
 
 **App.jsx**
 
@@ -4029,3 +4030,189 @@ function App() {
 
 export default App;
 ```
+
+Now a new **component (ToDoItem.jsx)** has been created for the code above which can be seen below:
+
+**State, Boolean and Ternary Operator** are used on the code below to create a `line-through` on an item that has been clicked on.
+
+**ToDoItem.jsx**
+
+```js
+import React, {useState} from "react";
+
+function ToDoItem(props){
+
+    //Boolean is set to false
+    const [isDone, setIsDone] = useState(false);
+
+    function handleClick() {
+        //Set a boolean to true or false when <div onClick={handleClick}> gets clicked
+        setIsDone((prevValue) =>{
+            return !prevValue;
+        });
+    };
+
+    return (
+        <div onClick={handleClick}>
+            {/*if isDone = true -> line-through, if false -> none*/}
+            <li style={{textDecoration: isDone ? "line-through" : "none"}}>{props.text}</li>
+        </div>
+    )
+};
+
+export default ToDoItem;
+```
+
+## Change the State of a Parent Component
+
+When we click on a `div` **item** the **item** will be deleted from the **items array** in the **App.jsx**. In order to do that we need to reach up from the **ToDoItem.jsx** to its **parant**, the **App.jsx**
+
+Other than passing over **props** to the **child components**, we can also pass over **functions** which gets called by our **child component**. For example, when we create each **to do item** in addition to the text **property** (`text={todoItem}`), we can add another property, and we can call it anything we want, e.g. `onChecked`, and we can set this equal to a **function** inside the **app component**, e.g. `deleteItem` **function**.
+
+So now we will call **deleteItem** and then inside **ToDoItem.jsx** we will be able to trigger the **function**, instead of the `handleClick` **function which lives inside the **ToDoItem.jsx\*\*.
+
+The entire **function** is being packaged up and sent over to the **ToDoItem.jsx** under the `prop onChecked`, and then that `prop` is only triggered when the **div** `<div onClick={props.onChecked}>` detects a click. And now we can address what should happen when that item wants to delete itself from the **array**.
+
+In order to delete the item that requested the deletion we can pass over something that identifies the item when the `onChecked` (ToDoItem.jsx) is called, something that identifies the particular ToDoItem from all of the other ones that gets rendered. That can be done by adding an **`id`**. The `key` will be set to the index of the **ToDoItem** from the **items array**. And the **map function** actually gives us a really easy way of accessing that.
+
+> :warning: **WARNING**</br></br>
+> We should always have a `key` when we map through `arrays` and when we create components.
+
+The final code can be seen below:
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem.jsx";
+
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem() {
+    setItems(prevItems => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
+  function deleteItem(id) {
+    console.log("Item called delete.");
+
+    //When setItems gets called it updates the list of items
+    setItems((prevItems) => {
+      /*
+      filter function to filter through all of the previous items in the
+      items array and get rid of the ones which match the id
+
+      Return an array constructed from the previous items array, but it is
+      going to be filtered to get rid of the item we don't want, so the one
+      that has the id that was passed over
+      The filter function expects a function itself
+      */
+      return  prevItems.filter(
+          /*
+          Go through the array of previous items, look through each item
+          and get the index of item in the array and return an output, a final array,
+          that is going to return all the items where the index is not equal to the id
+          being passed over
+         */
+          (item, index) => {
+            return index !== id;
+          });
+    });
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={inputText} />
+        <button onClick={addItem}>
+          <span>Add</span>
+        </button>
+      </div>
+
+      <div>
+        <ul>
+          {/*index is the current index of todoItem being looped through the items array*/}
+          {items.map((todoItem, index) => (
+            /*
+            In order to display a different ToDoItem each time we map through the
+            items array, we will pass the todoItem which is the text the
+            <ToDoItem /> should display as a property, we will call the property text
+            Now the text can be received inside the ToDoItem components as
+            one of the props
+
+            Other than passing over **props** to the child components, we can
+            also pass over functions which gets called by our child component.
+            For example, when we create each to do item in addition to the text
+            property text={todoItem}, we can add another property, and we can
+            call it anything we want, e.g. onChecked, and we can set this equal
+            to a function inside the app component, e.g. deleteItem function.
+
+            In order to delete the item that requested the deletion we can pass over
+            something that identifies the item when the onChecked (ToDoItem.jsx) is called,
+            something that identifies the particular ToDoItem from all of the other ones that
+            gets rendered. That can be done by adding an id.
+            */
+            <ToDoItem
+                key={index}
+                id={index}
+                text={todoItem}
+                onChecked={deleteItem}
+            />
+
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**ToDoItem.jsx**
+
+```js
+import React from "react";
+
+function ToDoItem(props){
+
+    //Boolean is set to false
+    // const [isDone, setIsDone] = useState(false);
+
+    //function handleClick() {
+        //Set a boolean to true or false when <div onClick={handleClick}> gets clicked
+        // setIsDone((prevValue) =>{
+        //     return !prevValue;
+        // });
+    //};
+
+    return (
+        /*
+        When the ToDoItem gets rendered the function below is not
+        going to be called until the div detects a click
+         */
+        <div onClick={() =>{
+        props.onChecked(props.id);
+        }}>
+            {/*if isDone = true -> line-through, if false -> none*/}
+            <li>{props.text}</li>
+        </div>
+    )
+};
+
+export default ToDoItem;
+```
+
+## Managing a Component Tree Challenge
