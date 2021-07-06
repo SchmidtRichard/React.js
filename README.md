@@ -62,8 +62,8 @@
 22. [JavaScript ES6 Spread Operator Lesson](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-lesson)</br>
     22.1 [JavaScript ES6 Spread Operator Challenge](https://github.com/SchmidtRichard/React.js#javascript-es6-spread-operator-challenge)</br>
 23. [Managing a Component Tree Lesson](https://github.com/SchmidtRichard/React.js#managing-a-component-tree-lesson)</br>
-    23.1 [Change the State of a Parent Component](<>)</br>
-    23.2 [Managing a Component Tree Challenge](<>)</br>
+    23.1 [Change the State of a Parent Component](https://github.com/SchmidtRichard/React.js#change-the-state-of-a-parent-component)</br>
+    23.2 [Managing a Component Tree Challenge](https://github.com/SchmidtRichard/React.js#managing-a-component-tree-challenge)</br>
 
 * * *
 
@@ -3574,10 +3574,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1. Using JS Objects with state.
-2. Making use of previous state when changing state.
-3. Working with forms in React.
-4. Handing events
+1\. Using JS Objects with state.
+2\. Making use of previous state when changing state.
+3\. Working with forms in React.
+4\. Handing events
 
 **App.jsx**
 
