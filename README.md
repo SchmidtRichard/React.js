@@ -3574,10 +3574,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1. Using JS Objects with state.
-2. Making use of previous state when changing state.
-3. Working with forms in React.
-4. Handing events
+1\. Using JS Objects with state.
+2\. Making use of previous state when changing state.
+3\. Working with forms in React.
+4\. Handing events
 
 **App.jsx**
 
@@ -4304,6 +4304,42 @@ export default InputArea;
 ```
 
 :heavy_check_mark: **Solution**
+
+The first thing we need to address is inside the **InputArea.jsx**, here we got an **onChange** which detects when the input actually updates, and this is something that probably should be managed inside the **InputAra.jsx** component.
+
+Move the code below from the **App.jsx** to the **InputArea.jsx** component.
+
+```js
+function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+}
+```
+
+It will now handle the change when the **input** updates and it is going to get hold of the new value from the `event.target.value;` is the `<**input** onChange={handleChange} type="text" value={inputText} />`, next it calls `setInputText(newValue);` with that new value so we can go ahead and port this part `const [inputText, setInputText] = useState("");` over as well as it will keep track of the state of the `inputText` which it holds and we are able to set it using this function.
+
+We also need to use **props** to pass over the `addItem` function over, this **prop** will be called `onAdd` inside the **App.jsx**.
+
+```js
+<InputArea
+    onAdd={addItem}
+/>
+```
+
+We will also have to pass over some **inputText** to put into our **array** of items, we can do that by actually passing in a function inside the **InputArea.jsx**.
+
+The last thing to do is to reset the **inputText** to an empty string.
+
+```js
+      <button
+          // When the button gets clicked it will trigger this function
+          onClick={() => {
+              props.onAdd(inputText);
+              setInputText("");
+      }}>
+        <span>Add</span>
+      </button>
+```
 
 **App.jsx**
 
