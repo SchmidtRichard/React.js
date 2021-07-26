@@ -3574,10 +3574,10 @@ export default App;
 :question: Make the code below (**App.jsx**) work. The final app should have a single contact with fName, lName and email.
 
 HINT: You'll need to apply the following things you learnt:
-1\. Using JS Objects with state.
-2\. Making use of previous state when changing state.
-3\. Working with forms in React.
-4\. Handing events
+1. Using JS Objects with state.
+2. Making use of previous state when changing state.
+3. Working with forms in React.
+4. Handing events
 
 **App.jsx**
 
@@ -4216,3 +4216,177 @@ export default ToDoItem;
 ```
 
 ## Managing a Component Tree Challenge
+
+:question: CHALLENGE: I have extracted the Input Area, including the `<input>` and `<button>` elements into a separate Component called **InputArea**.
+Your job is to make the app work as it did before but this time with the **InputArea** as a separate Component.
+
+DO NOT: Modify the **ToDoItem.jsx**
+DO NOT: Move the input/button elements back into the **App.jsx**
+
+Hint 1: You will need to think about how to manage the state of the input element in **InputArea.jsx**.
+Hint 2: You will need to think about how to pass the input value back into the `addItem()` function in **App.jsx**.
+
+Starting code below:
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
+import InputArea from "./InputArea";
+
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function addItem() {
+    setItems(prevItems => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
+  function deleteItem(id) {
+    setItems(prevItems => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <InputArea />
+      <div>
+        <ul>
+          {items.map((todoItem, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**InputArea.jsx**
+
+```js
+import React from "react";
+
+function InputArea() {
+  return (
+    <div className="form">
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button onClick={addItem}>
+        <span>Add</span>
+      </button>
+    </div>
+  );
+}
+
+export default InputArea;
+```
+
+:heavy_check_mark: **Solution**
+
+**App.jsx**
+
+```js
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
+import InputArea from "./InputArea";
+
+function App() {
+
+  const [items, setItems] = useState([]);
+
+  function addItem(inputText) {
+    setItems(prevItems => {
+      return [...prevItems, inputText];
+    });
+  }
+
+  function deleteItem(id) {
+    setItems(prevItems => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <InputArea
+          onAdd={addItem}
+      />
+      <div>
+        <ul>
+          {items.map((todoItem, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              onChecked={deleteItem}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**InputArea.jsx**
+
+```js
+import React, {useState} from "react";
+
+function InputArea(props) {
+
+    const [inputText, setInputText] = useState("");
+
+    function handleChange(event) {
+        const newValue = event.target.value;
+        setInputText(newValue);
+    }
+
+  return (
+    <div className="form">
+      <input onChange={handleChange} type="text" value={inputText} />
+      <button
+          // When the button gets clicked it will trigger this function
+          onClick={() => {
+              props.onAdd(inputText);
+              setInputText("");
+      }}>
+        <span>Add</span>
+      </button>
+    </div>
+  );
+}
+
+export default InputArea;
+```
+
+* * *
